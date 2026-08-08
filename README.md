@@ -95,7 +95,7 @@ This is the one I'm most proud of. A native C application (`.nro`) that runs *di
 <div align="center">
 
 <img src="https://github-readme-stats.vercel.app/api?username=Aramaki&show_icons=true&theme=radical&hide_border=true&bg_color=0b1420&title_color=00c2ff&icon_color=ff3c50&text_color=eaf1fa" height="165"/>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Aramaki&theme=radical&hide_border=true&background=0b1420&stroke=00c2ff&ring=ff3c50&fire=ff3c50&currStreakLabel=00c2ff" height="165"/>
+<img src="https://streak-stats.demolab.com/?user=Aramaki&theme=radical&hide_border=true&background=0b1420&stroke=00c2ff&ring=ff3c50&fire=ff3c50&currStreakLabel=00c2ff" height="165"/>
 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Aramaki&layout=compact&theme=radical&hide_border=true&bg_color=0b1420&title_color=00c2ff&text_color=eaf1fa" height="165"/>
 
