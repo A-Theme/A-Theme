@@ -1,3 +1,4 @@
+<img width="2176" height="544" alt="aramaki_a_3d_isometric_vector_illustration_of_a_stylized_lett_ebb47101-4040-458e-844d-1372378b9350_1" src="https://github.com/user-attachments/assets/45c16bd9-4db3-4a04-b391-9ac6808c3507" />
 ## Hi there 👋
 
 <!--
