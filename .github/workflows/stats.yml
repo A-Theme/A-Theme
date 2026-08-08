@@ -56,6 +56,13 @@ jobs:
           path: profile/pin-tinfoil-themes.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate trophy card
+        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
+        with:
+          username: Aramaki
+          output_path: profile/trophy.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
