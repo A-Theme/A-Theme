@@ -60,7 +60,12 @@ jobs:
         uses: Erik-Donath/github-profile-trophy@feature/generate-svg
         with:
           username: Aramaki
-          output_path: profile/trophy.svg
+          file: profile/trophy.svg
+          theme: radical
+          no-frame: true
+          no-background: true
+          margin-width: 8
+          max-rows: 1
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and push
