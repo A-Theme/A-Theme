@@ -1,4 +1,3 @@
-<img width="320" height="80" alt="aramaki_a_graphic_design_on_a_solid_black_background_features_0d4c6e8c-487f-4e98-b99c-77301916ac8e_1" src="https://github.com/user-attachments/assets/5c0e7008-2161-4e1e-9b5f-8dd080613c2b" />
 ## Hi there 👋
 
 <!--
