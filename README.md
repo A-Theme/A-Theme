@@ -41,10 +41,10 @@ A full pipeline for creating, browsing, and installing Tinfoil themes — three 
 
 <div align="center">
 
-[![Theme-App](https://github-readme-stats.vercel.app/api/pin/?username=A-Theme&repo=Theme-App&theme=radical&hide_border=true&bg_color=0b1420)](https://github.com/A-Theme/Theme-App)
-[![Switch-Theme-Installer](https://github-readme-stats.vercel.app/api/pin/?username=A-Theme&repo=Switch-Theme-Installer&theme=radical&hide_border=true&bg_color=0b1420)](https://github.com/A-Theme/Switch-Theme-Installer)
+[![Theme-App](profile/pin-theme-app.svg)](https://github.com/A-Theme/Theme-App)
+[![Switch-Theme-Installer](profile/pin-switch-installer.svg)](https://github.com/A-Theme/Switch-Theme-Installer)
 
-[![Tinfoil-Themes](https://github-readme-stats.vercel.app/api/pin/?username=A-Theme&repo=Tinfoil-Themes&theme=radical&hide_border=true&bg_color=0b1420)](https://github.com/A-Theme/Tinfoil-Themes)
+[![Tinfoil-Themes](profile/pin-tinfoil-themes.svg)](https://github.com/A-Theme/Tinfoil-Themes)
 
 </div>
 
@@ -94,10 +94,10 @@ This is the one I'm most proud of. A native C application (`.nro`) that runs *di
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Aramaki&show_icons=true&theme=radical&hide_border=true&bg_color=0b1420&title_color=00c2ff&icon_color=ff3c50&text_color=eaf1fa" height="165"/>
+<img src="profile/stats.svg" height="165"/>
 <img src="https://streak-stats.demolab.com/?user=Aramaki&theme=radical&hide_border=true&background=0b1420&stroke=00c2ff&ring=ff3c50&fire=ff3c50&currStreakLabel=00c2ff" height="165"/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Aramaki&layout=compact&theme=radical&hide_border=true&bg_color=0b1420&title_color=00c2ff&text_color=eaf1fa" height="165"/>
+<img src="profile/top-langs.svg" height="165"/>
 
 </div>
 
