@@ -9,8 +9,8 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=00C2FF&center=true&vCenter=true&width=680&lines=If+it+has+a+config+file%2C+I'm+opening+it.;Breaking+things+to+understand+them+since+forever.;Currently%3A+reverse-engineering+Tinfoil's+theme+format.;Currently%3A+writing+native+C+for+a+console+that+says+no.;Give+me+read+access+and+ten+minutes.)](https://git.io/typing-svg)
 
 <p>
-  <img src="https://komarev.com/ghpvc/?username=Aramaki&label=Profile+Views&color=00c2ff&style=for-the-badge" alt="profile views"/>
-  <img src="https://img.shields.io/github/followers/Aramaki?label=Followers&style=for-the-badge&color=ff3c50" alt="followers"/>
+  <img src="https://komarev.com/ghpvc/?username=A-Theme&label=Profile+Views&color=00c2ff&style=for-the-badge" alt="profile views"/>
+  <img src="https://img.shields.io/github/followers/A-Theme?label=Followers&style=for-the-badge&color=ff3c50" alt="followers"/>
   <img src="https://img.shields.io/badge/status-tinkering-9d4edd?style=for-the-badge" alt="status"/>
 </p>
 
@@ -95,25 +95,27 @@ This is the one I'm most proud of. A native C application (`.nro`) that runs *di
 <div align="center">
 
 <img src="profile/stats.svg" height="165"/>
-<img src="https://streak-stats.demolab.com/?user=Aramaki&theme=radical&hide_border=true&background=0b1420&stroke=00c2ff&ring=ff3c50&fire=ff3c50&currStreakLabel=00c2ff" height="165"/>
+<img src="https://streak-stats.demolab.com/?user=A-Theme&theme=radical&hide_border=true&background=0b1420&stroke=00c2ff&ring=ff3c50&fire=ff3c50&currStreakLabel=00c2ff" height="165"/>
 
 <img src="profile/top-langs.svg" height="165"/>
 
 </div>
 
 <div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=Aramaki&theme=radical&no-frame=true&no-bg=true&margin-w=8&row=1" />
+<img src="https://github-profile-trophy.vercel.app/?username=A-Theme&theme=radical&no-frame=true&no-bg=true&margin-w=8&row=1" />
 </div>
 
 ---
 
 ## 🐍 Contribution Snake
 
-<!-- To make this animate for real: add the platane/snk GitHub Action to this
-     repo (github.com/Platane/snk), configure it with github_user_name: Aramaki
-     so it tracks your personal contribution graph, and it'll generate and
-     commit the SVGs below to this repo's `output` branch automatically. -->
+<!-- The snake itself only ever shows one rolling year -- that's a real
+     GitHub API limit, not a tool limitation. The badge above it covers
+     the true lifetime total instead, generated in the same workflow that
+     builds the cards below (see .github/workflows/stats.yml). -->
 <div align="center">
+<img src="profile/lifetime-badge.svg"/>
+<br/>
 <img src="https://raw.githubusercontent.com/A-Theme/A-Theme/output/github-contribution-grid-snake-dark.svg" width="100%"/>
 </div>
 
