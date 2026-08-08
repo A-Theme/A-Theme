@@ -15,7 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Generate the snake SVGs
+      - uses: actions/checkout@v4
+
+      # The rolling-year snake -- Platane/snk, confirmed working, shows
+      # whatever GitHub's live current-year contribution graph says.
+      - name: Generate the current-year snake SVGs
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: A-Theme
@@ -24,6 +28,68 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
         env:
           GH_TOKEN: ${{ secrets.SNAKE_TOKEN }}
+
+      # The year-cycling snake -- a from-scratch pathfinding + SVG
+      # generator (profile/build-snake.js in this repo), built because
+      # Platane/snk has no way to target a past year at all. Cycles
+      # deterministically through every year since the account was
+      # created, changing once per day, no state file needed -- see the
+      # day-count math below.
+      - name: Generate the year-cycling snake SVG
+        id: yearsnake
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.SNAKE_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const { buildSnakeSVG } = require('./profile/build-snake.js');
+
+            const username = "A-Theme";
+
+            const createdRes = await github.graphql(
+              `query($login: String!) { user(login: $login) { createdAt } }`,
+              { login: username }
+            );
+            const createdYear = new Date(createdRes.user.createdAt).getFullYear();
+            const currentYear = new Date().getFullYear();
+
+            const yearsAvailable = [];
+            for (let y = createdYear; y <= currentYear; y++) yearsAvailable.push(y);
+
+            // Deterministic daily rotation -- no state file to maintain,
+            // just changes automatically once every 24h and wraps around.
+            const daysSinceEpoch = Math.floor(Date.now() / 86400000);
+            const targetYear = yearsAvailable[daysSinceEpoch % yearsAvailable.length];
+
+            const from = new Date(Date.UTC(targetYear, 0, 1)).toISOString();
+            const to = new Date(Date.UTC(targetYear, 11, 31, 23, 59, 59)).toISOString();
+
+            const dataRes = await github.graphql(
+              `query($login: String!, $from: DateTime!, $to: DateTime!) {
+                user(login: $login) {
+                  contributionsCollection(from: $from, to: $to) {
+                    contributionCalendar {
+                      weeks {
+                        contributionDays {
+                          contributionCount
+                          contributionLevel
+                          weekday
+                          date
+                        }
+                      }
+                    }
+                  }
+                }
+              }`,
+              { login: username, from, to }
+            );
+
+            const weeks = dataRes.user.contributionsCollection.contributionCalendar.weeks;
+            const { svg, totalContribs } = buildSnakeSVG(weeks, targetYear);
+
+            fs.mkdirSync('dist', { recursive: true });
+            fs.writeFileSync('dist/snake-year.svg', svg);
+            console.log(`Built year-cycling snake for ${targetYear}: ${totalContribs} contributions`);
 
       - name: Push the SVGs to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
