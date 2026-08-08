@@ -109,14 +109,22 @@ This is the one I'm most proud of. A native C application (`.nro`) that runs *di
 
 ## 🐍 Contribution Snake
 
-<!-- The snake itself only ever shows one rolling year -- that's a real
-     GitHub API limit, not a tool limitation. The badge above it covers
-     the true lifetime total instead, generated in the same workflow that
-     builds the cards below (see .github/workflows/stats.yml). -->
+<!-- The rolling-year snake only ever shows the current 365 days -- that's
+     a real GitHub API limit, not a tool limitation (Platane/snk has no
+     way to target a past year at all). The lifetime badge covers the true
+     all-time total, and the second snake below is a from-scratch
+     pathfinding engine (profile/build-snake.js) built specifically to
+     show a real, specific past year -- it cycles automatically once a
+     day through every year since this account was created. Both are
+     generated in .github/workflows/snake.yml. -->
 <div align="center">
 <img src="profile/lifetime-badge.svg"/>
 <br/>
 <img src="https://raw.githubusercontent.com/A-Theme/A-Theme/output/github-contribution-grid-snake-dark.svg" width="100%"/>
+<br/><br/>
+<sub>Rolling current year, above. A different specific year, cycling daily, below.</sub>
+<br/>
+<img src="https://raw.githubusercontent.com/A-Theme/A-Theme/output/snake-year.svg" width="100%"/>
 </div>
 
 ---
