@@ -109,22 +109,20 @@ This is the one I'm most proud of. A native C application (`.nro`) that runs *di
 
 ## 🐍 Contribution Snake
 
-<!-- The rolling-year snake only ever shows the current 365 days -- that's
-     a real GitHub API limit, not a tool limitation (Platane/snk has no
-     way to target a past year at all). The lifetime badge covers the true
-     all-time total, and the second snake below is a from-scratch
-     pathfinding engine (profile/build-snake.js) built specifically to
-     show a real, specific past year -- it cycles automatically once a
-     day through every year since this account was created. Both are
-     generated in .github/workflows/snake.yml. -->
+<!-- One snake now, not two -- Platane/snk was removed from the workflow
+     since it's a closed action with no way to target a specific past
+     year (only ever reads GitHub's live current rolling 365 days). The
+     custom pathfinding engine (profile/build-snake.js) generates
+     everything now: cycles automatically once a day through every year
+     since this account was created, with the same GitHub-dark color
+     palette Platane/snk used. The lifetime badge above it still covers
+     the true all-time total, since the snake itself can only ever show
+     one year at a time -- that's a real GitHub API limit, not a tool
+     limitation. Generated in .github/workflows/snake.yml. -->
 <div align="center">
 <img src="profile/lifetime-badge.svg"/>
 <br/>
-<img src="https://raw.githubusercontent.com/A-Theme/A-Theme/output/github-contribution-grid-snake-dark.svg" width="100%"/>
-<br/><br/>
-<sub>Rolling current year, above. A different specific year, cycling daily, below.</sub>
-<br/>
-<img src="https://raw.githubusercontent.com/A-Theme/A-Theme/output/snake-year.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/A-Theme/A-Theme/output/snake.svg" width="100%"/>
 </div>
 
 ---
