@@ -17,26 +17,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # The rolling-year snake -- Platane/snk, confirmed working, shows
-      # whatever GitHub's live current-year contribution graph says.
-      - name: Generate the current-year snake SVGs
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: A-Theme
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-        env:
-          GH_TOKEN: ${{ secrets.SNAKE_TOKEN }}
-
-      # The year-cycling snake -- a from-scratch pathfinding + SVG
-      # generator (profile/build-snake.js in this repo), built because
-      # Platane/snk has no way to target a past year at all. Cycles
-      # deterministically through every year since the account was
-      # created, changing once per day, no state file needed -- see the
-      # day-count math below.
-      - name: Generate the year-cycling snake SVG
-        id: yearsnake
+      # One snake, one implementation. Platane/snk is gone -- it's a
+      # closed third-party action with no way to target a specific year
+      # (it only ever reads whatever GitHub's live rolling contribution
+      # graph currently says), so it structurally couldn't be combined
+      # with the year-cycling logic below. Rather than run two separate
+      # snakes with two different looks, this uses the custom
+      # pathfinding engine (profile/build-snake.js) for everything --
+      # its palette already matches GitHub's real dark-mode contribution
+      # colors exactly (verified: --c0 through --c4 are the literal
+      # github-dark hex values), so the visual result is consistent with
+      # what Platane/snk used to produce, just from one script instead
+      # of two.
+      #
+      # Cycles deterministically through every year since the account
+      # was created, changing once per day, no state file needed -- see
+      # the day-count math below.
+      - name: Generate the snake SVG
+        id: snake
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.SNAKE_TOKEN }}
@@ -88,10 +86,10 @@ jobs:
             const { svg, totalContribs } = buildSnakeSVG(weeks, targetYear);
 
             fs.mkdirSync('dist', { recursive: true });
-            fs.writeFileSync('dist/snake-year.svg', svg);
-            console.log(`Built year-cycling snake for ${targetYear}: ${totalContribs} contributions`);
+            fs.writeFileSync('dist/snake.svg', svg);
+            console.log(`Built snake for ${targetYear}: ${totalContribs} contributions`);
 
-      - name: Push the SVGs to the output branch
+      - name: Push the SVG to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
