@@ -114,7 +114,7 @@
     
 
     <text class="description" x="25" y="-5"> 
-      <tspan dy="1.2em" x="25">On-console forwarder generator for Switch. Turns retro</tspan><tspan dy="1.2em" x="25">ROMs into HOME menu titles &#8212; no PC required. Built with</tspan><tspan dy="1.2em" x="25">nx.js.</tspan>
+      <tspan dy="1.2em" x="25">Native Switch homebrew (C / devkitA64) to browse, preview,</tspan><tspan dy="1.2em" x="25">and install Tinfoil themes on-console &#8212; with on-device</tspan><tspan dy="1.2em" x="25">palette generation.</tspan>
     </text>
 
     <g transform="translate(30, 75)">
