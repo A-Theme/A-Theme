@@ -37,7 +37,7 @@ currently
 
 ## 🎨 What I've Been Building — The A-Theme Project
 
-A full pipeline for creating, browsing, and installing Tinfoil themes — three tools, one shared theme database, built from scratch across three very different platforms.
+A full pipeline for creating, browsing, and installing Switch themes — now covering two different targets: Tinfoil, and the RomM Switch client. Shared theme databases, built from scratch across several very different platforms.
 
 <div align="center">
 
@@ -45,6 +45,8 @@ A full pipeline for creating, browsing, and installing Tinfoil themes — three 
 [![Switch-Theme-Installer](profile/pin-switch-installer.svg)](https://github.com/A-Theme/Switch-Theme-Installer)
 
 [![Tinfoil-Themes](profile/pin-tinfoil-themes.svg)](https://github.com/A-Theme/Tinfoil-Themes)
+
+[![RomM-Themes](https://img.shields.io/badge/RomM--Themes-romm%20theme%20database-5be27a?style=for-the-badge)](https://github.com/A-Theme/RomM-Themes)
 
 </div>
 
@@ -66,6 +68,26 @@ This is the one I'm most proud of. A native C application (`.nro`) that runs *di
 
 ### 🌈 [Tinfoil-Themes](https://github.com/A-Theme/Tinfoil-Themes) — the database itself
 150+ community and original themes, serving as the shared backbone every other tool in this project reads from.
+
+### 🟢 [RomM-Themes](https://github.com/A-Theme/RomM-Themes) — theming a second app entirely
+The same idea pointed at a different target: the **RomM Switch client**, which is a
+full SDL2 homebrew app rather than a shop. A theme there is a folder on the SD card
+and can change far more than a colour scheme:
+
+- **19 semantic colour roles** — not raw palette slots, so a theme stays coherent as
+  screens get added
+- **Backgrounds** with a dim control, plus `drift`/`pan`/`zoom` motion that costs
+  **zero extra memory**, and real frame animation via sprite sheets
+- **Replacement font, mascot art, and music** — including tracker modules, which are
+  often a few KB for minutes of audio
+- Every submission is **validated in CI against the same rules the client enforces**,
+  so a typo'd colour role or an uncommitted background never reaches a console
+
+The editor for it lives in **[Theme-App](https://github.com/A-Theme/Theme-App)**
+alongside the Tinfoil one — it previews the real client screens at the console's
+actual 1280×720, checks WCAG contrast, and enforces the animated-background memory
+budget live (one 720p frame is 3.6 MB of texture, so it is budgeted rather than
+trusted).
 
 ---
 
