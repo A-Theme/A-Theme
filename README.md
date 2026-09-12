@@ -50,8 +50,11 @@ A full pipeline for creating, browsing, and installing Switch themes — now cov
 
 </div>
 
-### 🖥️ [Theme-App](https://github.com/A-Theme/Theme-App) — the visual editor
-A full theme.json GUI editor that runs as a browser app, an installable mobile PWA, *and* a Windows desktop app — all from one codebase. The newest stuff:
+### 🖥️ [Theme-App](https://github.com/A-Theme/Theme-App) — the visual editors
+**Two** editors now, one for each theming target, sharing a launcher and the same
+scaffolding: the original Tinfoil editor, and a newer one for the RomM Switch
+client. Both run as a browser app, an installable PWA, *and* a Windows desktop
+app — all from one codebase. The newest stuff on the Tinfoil side:
 
 - **Browse the entire live theme database from inside the app** and load one with a click — it downloads and unzips the theme's archive **entirely client-side** (real embedded JSZip, no server involved) and wires up every bundled logo/background/audio file automatically
 - **Palette generation via real k-means color clustering**, extracted straight from your background image — not a gimmick, actual dominant-color math
