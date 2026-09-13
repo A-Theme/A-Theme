@@ -61,6 +61,13 @@ app — all from one codebase. The newest stuff on the Tinfoil side:
 - **A live, pixel-accurate mockup preview** of the real Tinfoil layout, where every visible piece is hoverable and clickable — hover a selection tile, it tells you exactly which JSON field controls it; click it, and the form scrolls straight to that field and highlights it
 - Full alpha/transparency support with a visual slider and diagram, because hex color formats are not intuitive and I got tired of explaining them
 
+And the newest stuff on the RomM side:
+
+- **Browse the published catalog from inside the editor** — it reads the same `manifest.json` the console reads, and opens a theme with its background, font, mascot and music downloaded, so the quickest way to start a new theme is to open the nearest existing one and change it
+- **Background motion that actually plays** — `drift`/`pan`/`zoom` and sprite-sheet animation, previewed by a *port of the client's own `theme_motion.cpp`* rather than something that looks like drift. A differential test runs 6336 inputs through both implementations and requires byte-identical output; it caught the console computing in 32-bit float, where the first port was a whole pixel off at some timestamps
+- **Import a folder, a `.zip` pack, or a bare `theme.json`** — a `theme.json` only *names* its background, so importing one file used to hand you colours and five dangling references
+- **20 starting palettes**, each setting all 19 roles and contrast-checked on the pairs that actually break a theme: body text over all three surfaces, muted text, the focus ring, and whatever sits on an accent fill
+
 ### 🎮 [Switch-Theme-Installer](https://github.com/A-Theme/Switch-Theme-Installer) — native homebrew, on the console itself
 This is the one I'm most proud of. A native C application (`.nro`) that runs *directly on a Nintendo Switch* — no PC required:
 
@@ -88,9 +95,11 @@ and can change far more than a colour scheme:
 
 The editor for it lives in **[Theme-App](https://github.com/A-Theme/Theme-App)**
 alongside the Tinfoil one — it previews the real client screens at the console's
-actual 1280×720, checks WCAG contrast, and enforces the animated-background memory
-budget live (one 720p frame is 3.6 MB of texture, so it is budgeted rather than
-trusted).
+actual 1280×720, plays the background motion using the client's own arithmetic,
+checks WCAG contrast, and enforces the animated-background memory budget live
+(one 720p frame is 3.6 MB of texture, so it is budgeted rather than trusted —
+and an animation over budget falls back to the still image in the preview,
+because that is what the console does with it).
 
 ---
 
