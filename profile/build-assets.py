@@ -150,13 +150,13 @@ def build_hero():
         .ltr {{
           font: 800 92px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace;
           fill: url(#ink); letter-spacing: 2px;
-          opacity: 0; animation: rise 0.9s cubic-bezier(.2,.8,.2,1) forwards;
+          animation: rise 0.9s cubic-bezier(.2,.8,.2,1) both;
         }}
         .tag {{
           font: 500 19px ui-monospace, 'Fira Code', Consolas, monospace; fill: {MU};
-          opacity: 0; animation: fade 1s ease-out 0.75s forwards;
+          animation: fade 1s ease-out 0.75s both;
         }}
-        .chip {{ opacity: 0; animation: rise 0.7s cubic-bezier(.2,.8,.2,1) forwards; }}
+        .chip {{ animation: rise 0.7s cubic-bezier(.2,.8,.2,1) both; }}
         .chip-t {{ font: 500 12.5px ui-monospace, 'Fira Code', Consolas, monospace; }}
         @keyframes rise {{ from {{ opacity: 0; transform: translateY(14px); }} to {{ opacity: 1; transform: translateY(0); }} }}
         @keyframes fade {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
@@ -462,7 +462,7 @@ def build_card(fname, accent, title, status, desc, tags, glyph_kind):
     .cs {{ font: 700 11px {MONO}; fill: {accent}; }}
     .cd {{ font: 400 12.5px {MONO}; fill: {MU}; }}
     .tg {{ font: 600 11px {MONO}; }}
-    .in {{ opacity: 0; animation: cin .8s cubic-bezier(.2,.8,.2,1) forwards; }}
+    .in {{ animation: cin .8s cubic-bezier(.2,.8,.2,1) both; }}
     @keyframes cin {{ from {{ opacity: 0 }} to {{ opacity: 1 }} }}
   </style>
   <g clip-path="url(#cf)">
