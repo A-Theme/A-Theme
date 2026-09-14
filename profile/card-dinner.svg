@@ -21,7 +21,7 @@
     .cs { font: 700 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #d8924a; }
     .cd { font: 400 12.5px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #a8bdd4; }
     .tg { font: 600 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; }
-    .in { opacity: 0; animation: cin .8s cubic-bezier(.2,.8,.2,1) forwards; }
+    .in { animation: cin .8s cubic-bezier(.2,.8,.2,1) both; }
     @keyframes cin { from { opacity: 0 } to { opacity: 1 } }
   </style>
   <g clip-path="url(#cf)">
