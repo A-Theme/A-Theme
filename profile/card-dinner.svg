@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 186"
+  width="580" height="186" role="img" aria-labelledby="ct cd">
+  <title id="ct">dinner-by-derek</title>
+  <desc id="cd">dinner-by-derek — new · not a Switch. An installable ordering app for a supper club: no app store, no accounts, no online payment — a site that installs to a home screen. One-file SQLite, measured WCAG contrast, print cards at 300 DPI. Built with: Node 20, Express 5, SQLite, PWA.</desc>
+  <defs>
+    <pattern id="gc" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#d8924a" stroke-opacity="0.05" stroke-width="1"/></pattern>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8924a" stop-opacity="0.15"/>
+      <stop offset="0.5" stop-color="#d8924a" stop-opacity="1"/>
+      <stop offset="1" stop-color="#d8924a" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.055"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="cf"><rect width="580" height="186" rx="12"/></clipPath>
+  </defs>
+  <style>
+    .ch { font: 700 19px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #d8924a; }
+    .cs { font: 700 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #d8924a; }
+    .cd { font: 400 12.5px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #a8bdd4; }
+    .tg { font: 600 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; }
+    .in { opacity: 0; animation: cin .8s cubic-bezier(.2,.8,.2,1) forwards; }
+    @keyframes cin { from { opacity: 0 } to { opacity: 1 } }
+  </style>
+  <g clip-path="url(#cf)">
+    <rect width="580" height="186" fill="#101c2c"/>
+    <rect width="580" height="186" fill="url(#gc)"/>
+
+    <!-- left edge, breathing -->
+    <rect width="4" height="186" fill="url(#edge)">
+      <animate attributeName="opacity" values="0.55;1;0.55" dur="4.5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- slow gloss sweep -->
+    <rect x="-240" y="0" width="240" height="186" fill="url(#gloss)">
+      <animate attributeName="x" values="-240;580" dur="9s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+
+    <g class="in">
+      <g transform="translate(378,25)"><rect x="0" y="0" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.00s" repeatCount="indefinite"/></rect><rect x="9" y="0" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.16s" repeatCount="indefinite"/></rect><rect x="18" y="0" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.32s" repeatCount="indefinite"/></rect><rect x="0" y="9" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.48s" repeatCount="indefinite"/></rect><rect x="9" y="9" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.64s" repeatCount="indefinite"/></rect><rect x="18" y="9" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.80s" repeatCount="indefinite"/></rect><rect x="0" y="18" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.96s" repeatCount="indefinite"/></rect><rect x="9" y="18" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="1.12s" repeatCount="indefinite"/></rect><rect x="18" y="18" width="6" height="6" rx="1.5" fill="#d8924a"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="1.28s" repeatCount="indefinite"/></rect></g>
+      <text class="ch" x="22" y="46">dinner-by-derek</text>
+      <g transform="translate(420,26)">
+        <rect width="142" height="22" rx="11" fill="#d8924a" fill-opacity="0.14"
+          stroke="#d8924a" stroke-opacity="0.5"/>
+        <text class="cs" x="71" y="15" text-anchor="middle">new · not a Switch</text>
+      </g>
+      <path d="M22 60 H 558" stroke="#d8924a" stroke-opacity="0.18" stroke-width="1"/>
+      <text class="cd" x="22" y="96">An installable ordering app for a supper club: no app store, no</text><text class="cd" x="22" y="116">accounts, no online payment — a site that installs to a home screen.</text><text class="cd" x="22" y="136">One-file SQLite, measured WCAG contrast, print cards at 300 DPI.</text>
+      <g transform="translate(22,144)"><rect width="72" height="24" rx="12" fill="#5be27a" fill-opacity="0.11" stroke="#5be27a" stroke-opacity="0.45"/><text class="tg" x="36" y="16" fill="#5be27a" text-anchor="middle">Node 20</text></g><g transform="translate(103,144)"><rect width="85" height="24" rx="12" fill="#d8924a" fill-opacity="0.11" stroke="#d8924a" stroke-opacity="0.45"/><text class="tg" x="42" y="16" fill="#d8924a" text-anchor="middle">Express 5</text></g><g transform="translate(197,144)"><rect width="65" height="24" rx="12" fill="#00c2ff" fill-opacity="0.11" stroke="#00c2ff" stroke-opacity="0.45"/><text class="tg" x="32" y="16" fill="#00c2ff" text-anchor="middle">SQLite</text></g><g transform="translate(271,144)"><rect width="45" height="24" rx="12" fill="#9d4edd" fill-opacity="0.11" stroke="#9d4edd" stroke-opacity="0.45"/><text class="tg" x="22" y="16" fill="#9d4edd" text-anchor="middle">PWA</text></g>
+    </g>
+    <rect x="0.5" y="0.5" width="579" height="185" rx="12" fill="none"
+      stroke="#d8924a" stroke-opacity="0.28"/>
+  </g>
+</svg>

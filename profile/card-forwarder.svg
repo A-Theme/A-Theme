@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 186"
+  width="580" height="186" role="img" aria-labelledby="ct cd">
+  <title id="ct">switch-rom-forwarder</title>
+  <desc id="cd">switch-rom-forwarder — new · early. HOME-menu forwarders for retro games, generated on the console with no PC in the loop. CRC32 against No-Intro DATs to recover real titles, libretro box art, and a diff of every source before it touches a thing. Built with: nx.js, JavaScript, NSP, no devkitPro.</desc>
+  <defs>
+    <pattern id="gc" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#9d4edd" stroke-opacity="0.05" stroke-width="1"/></pattern>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9d4edd" stop-opacity="0.15"/>
+      <stop offset="0.5" stop-color="#9d4edd" stop-opacity="1"/>
+      <stop offset="1" stop-color="#9d4edd" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.055"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="cf"><rect width="580" height="186" rx="12"/></clipPath>
+  </defs>
+  <style>
+    .ch { font: 700 19px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #9d4edd; }
+    .cs { font: 700 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #9d4edd; }
+    .cd { font: 400 12.5px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #a8bdd4; }
+    .tg { font: 600 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; }
+    .in { opacity: 0; animation: cin .8s cubic-bezier(.2,.8,.2,1) forwards; }
+    @keyframes cin { from { opacity: 0 } to { opacity: 1 } }
+  </style>
+  <g clip-path="url(#cf)">
+    <rect width="580" height="186" fill="#101c2c"/>
+    <rect width="580" height="186" fill="url(#gc)"/>
+
+    <!-- left edge, breathing -->
+    <rect width="4" height="186" fill="url(#edge)">
+      <animate attributeName="opacity" values="0.55;1;0.55" dur="4.5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- slow gloss sweep -->
+    <rect x="-240" y="0" width="240" height="186" fill="url(#gloss)">
+      <animate attributeName="x" values="-240;580" dur="9s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+
+    <g class="in">
+      <g transform="translate(420,25)"><rect x="0" y="14" width="4" height="10" rx="2" fill="#9d4edd"><animate attributeName="height" values="10;5;10" dur="1.6s" repeatCount="indefinite"/><animate attributeName="y" values="14;19;14" dur="1.6s" repeatCount="indefinite"/></rect><rect x="7" y="6" width="4" height="18" rx="2" fill="#9d4edd"><animate attributeName="height" values="18;9;18" dur="1.8s" repeatCount="indefinite"/><animate attributeName="y" values="6;15;6" dur="1.8s" repeatCount="indefinite"/></rect><rect x="14" y="0" width="4" height="24" rx="2" fill="#9d4edd"><animate attributeName="height" values="24;12;24" dur="2.0s" repeatCount="indefinite"/><animate attributeName="y" values="0;12;0" dur="2.0s" repeatCount="indefinite"/></rect><rect x="21" y="8" width="4" height="16" rx="2" fill="#9d4edd"><animate attributeName="height" values="16;8;16" dur="2.2s" repeatCount="indefinite"/><animate attributeName="y" values="8;16;8" dur="2.2s" repeatCount="indefinite"/></rect><rect x="28" y="16" width="4" height="8" rx="2" fill="#9d4edd"><animate attributeName="height" values="8;4;8" dur="2.4s" repeatCount="indefinite"/><animate attributeName="y" values="16;20;16" dur="2.4s" repeatCount="indefinite"/></rect></g>
+      <text class="ch" x="22" y="46">switch-rom-forwarder</text>
+      <g transform="translate(466,26)">
+        <rect width="96" height="22" rx="11" fill="#9d4edd" fill-opacity="0.14"
+          stroke="#9d4edd" stroke-opacity="0.5"/>
+        <text class="cs" x="48" y="15" text-anchor="middle">new · early</text>
+      </g>
+      <path d="M22 60 H 558" stroke="#9d4edd" stroke-opacity="0.18" stroke-width="1"/>
+      <text class="cd" x="22" y="96">HOME-menu forwarders for retro games, generated on the console with no</text><text class="cd" x="22" y="116">PC in the loop. CRC32 against No-Intro DATs to recover real titles,</text><text class="cd" x="22" y="136">libretro box art, and a diff of every source before it touches a thing.</text>
+      <g transform="translate(22,144)"><rect width="59" height="24" rx="12" fill="#9d4edd" fill-opacity="0.11" stroke="#9d4edd" stroke-opacity="0.45"/><text class="tg" x="30" y="16" fill="#9d4edd" text-anchor="middle">nx.js</text></g><g transform="translate(90,144)"><rect width="92" height="24" rx="12" fill="#00c2ff" fill-opacity="0.11" stroke="#00c2ff" stroke-opacity="0.45"/><text class="tg" x="46" y="16" fill="#00c2ff" text-anchor="middle">JavaScript</text></g><g transform="translate(191,144)"><rect width="45" height="24" rx="12" fill="#ff3c50" fill-opacity="0.11" stroke="#ff3c50" stroke-opacity="0.45"/><text class="tg" x="22" y="16" fill="#ff3c50" text-anchor="middle">NSP</text></g><g transform="translate(245,144)"><rect width="105" height="24" rx="12" fill="#7d95ae" fill-opacity="0.11" stroke="#7d95ae" stroke-opacity="0.45"/><text class="tg" x="52" y="16" fill="#7d95ae" text-anchor="middle">no devkitPro</text></g>
+    </g>
+    <rect x="0.5" y="0.5" width="579" height="185" rx="12" fill="none"
+      stroke="#9d4edd" stroke-opacity="0.28"/>
+  </g>
+</svg>

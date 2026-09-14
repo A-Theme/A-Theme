@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 232"
+  width="1200" height="232" role="img" aria-labelledby="nowTitle nowDesc">
+  <title id="nowTitle">Now building</title>
+  <desc id="nowDesc">A terminal panel that types out four current projects: Switch-Theme-Installer (k-means palette extraction on the console, in C), switch-rom-forwarder (HOME menu forwarders built on-device), Theme-App 2.1.0 (two editors, desktop build cut by CI), and dinner-by-derek (a supper club that runs off a phone).</desc>
+  <defs>
+    <pattern id="gnow" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#00c2ff" stroke-opacity="0.05" stroke-width="1"/></pattern>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00c2ff"/><stop offset="0.5" stop-color="#9d4edd"/>
+      <stop offset="1" stop-color="#ff3c50"/>
+    </linearGradient>
+    <clipPath id="nowframe"><rect width="1200" height="232" rx="14"/></clipPath>
+    <clipPath id="t0"><rect x="30" y="72" height="30" width="0"><animate attributeName="width" dur="22.0s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.0455;0.1136;0.965;1" values="0;0;1140;1140;0"/></rect></clipPath><clipPath id="t1"><rect x="30" y="104" height="30" width="0"><animate attributeName="width" dur="22.0s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.1318;0.2000;0.965;1" values="0;0;1140;1140;0"/></rect></clipPath><clipPath id="t2"><rect x="30" y="136" height="30" width="0"><animate attributeName="width" dur="22.0s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.2182;0.2864;0.965;1" values="0;0;1140;1140;0"/></rect></clipPath><clipPath id="t3"><rect x="30" y="168" height="30" width="0"><animate attributeName="width" dur="22.0s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.3045;0.3727;0.965;1" values="0;0;1140;1140;0"/></rect></clipPath><clipPath id="t4"><rect x="30" y="200" height="30" width="0"><animate attributeName="width" dur="22.0s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.3909;0.4591;0.965;1" values="0;0;1140;1140;0"/></rect></clipPath>
+  </defs>
+  <style>
+    .sig  { font: 700 16px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; }
+    .lbl  { font: 700 16px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; }
+    .rest { font: 400 13.5px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #a8bdd4; }
+    .hd   { font: 600 12.5px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #7d95ae; }
+  </style>
+  <g clip-path="url(#nowframe)">
+    <rect width="1200" height="232" fill="#101c2c"/>
+    <rect width="1200" height="232" fill="url(#gnow)"/>
+    <rect width="1200" height="34" fill="#0a1220"/>
+    <circle cx="22" cy="17" r="5" fill="#ff3c50" opacity="0.85"/>
+    <circle cx="40" cy="17" r="5" fill="#d8924a" opacity="0.85"/>
+    <circle cx="58" cy="17" r="5" fill="#5be27a" opacity="0.85"/>
+    <text class="hd" x="80" y="21">aramaki@workbench: ~/what-im-on-right-now</text>
+    <rect y="34" width="1200" height="2" fill="url(#bar)" opacity="0.7"/>
+    <g clip-path="url(#t0)"><text class="sig" x="34" y="92" fill="#00c2ff">$</text><text class="lbl" x="60" y="92" fill="#00c2ff">now</text></g><g clip-path="url(#t1)"><text class="sig" x="34" y="124" fill="#ff3c50">→</text><text class="lbl" x="60" y="124" fill="#ff3c50">Switch-Theme-Installer</text><text class="rest" x="291" y="124">k-means palette extraction, running on the console itself, in C</text></g><g clip-path="url(#t2)"><text class="sig" x="34" y="156" fill="#9d4edd">→</text><text class="lbl" x="60" y="156" fill="#9d4edd">switch-rom-forwarder</text><text class="rest" x="272" y="156">HOME-menu forwarders built on-device — no PC in the loop</text></g><g clip-path="url(#t3)"><text class="sig" x="34" y="188" fill="#00c2ff">→</text><text class="lbl" x="60" y="188" fill="#00c2ff">Theme-App 2.1.0</text><text class="rest" x="224" y="188">two editors, one brand, desktop build cut by CI</text></g><g clip-path="url(#t4)"><text class="sig" x="34" y="220" fill="#d8924a">→</text><text class="lbl" x="60" y="220" fill="#d8924a">dinner-by-derek</text><text class="rest" x="224" y="220">a supper club that runs off a phone. no Switch in sight</text></g>
+    <rect width="10" height="19" fill="#00c2ff" opacity="0.9"><animate attributeName="x" dur="22.0s" repeatCount="indefinite" keyTimes="0;0.0455;0.1136;0.1318;0.2000;0.2182;0.2864;0.3045;0.3727;0.3909;0.4591;1" values="34;34;89;34;802;34;726;34;605;34;670;670"/><animate attributeName="y" dur="22.0s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.0455;0.1136;0.1318;0.2000;0.2182;0.2864;0.3045;0.3727;0.3909;0.4591;1" values="72;77;77;109;109;141;141;173;173;205;205;205"/><animate attributeName="opacity" values="0.95;0.05;0.95" dur="1.1s" repeatCount="indefinite"/></rect>
+    <rect x="0.5" y="0.5" width="1199" height="231" rx="14" fill="none"
+      stroke="#1d2e44" stroke-width="1"/>
+  </g>
+</svg>

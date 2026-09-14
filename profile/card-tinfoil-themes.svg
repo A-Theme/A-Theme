@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 186"
+  width="580" height="186" role="img" aria-labelledby="ct cd">
+  <title id="ct">Tinfoil-Themes</title>
+  <desc id="cd">Tinfoil-Themes — 173 entries. The database everything else reads — community and original Tinfoil themes, served straight off GitHub Pages and browsable from inside the editor and from the console, without leaving either one. Built with: JSON, GitHub Pages, 170+ themes, secret-scanned.</desc>
+  <defs>
+    <pattern id="gc" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#00c2ff" stroke-opacity="0.05" stroke-width="1"/></pattern>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00c2ff" stop-opacity="0.15"/>
+      <stop offset="0.5" stop-color="#00c2ff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00c2ff" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.055"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="cf"><rect width="580" height="186" rx="12"/></clipPath>
+  </defs>
+  <style>
+    .ch { font: 700 19px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #00c2ff; }
+    .cs { font: 700 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #00c2ff; }
+    .cd { font: 400 12.5px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #a8bdd4; }
+    .tg { font: 600 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; }
+    .in { opacity: 0; animation: cin .8s cubic-bezier(.2,.8,.2,1) forwards; }
+    @keyframes cin { from { opacity: 0 } to { opacity: 1 } }
+  </style>
+  <g clip-path="url(#cf)">
+    <rect width="580" height="186" fill="#101c2c"/>
+    <rect width="580" height="186" fill="url(#gc)"/>
+
+    <!-- left edge, breathing -->
+    <rect width="4" height="186" fill="url(#edge)">
+      <animate attributeName="opacity" values="0.55;1;0.55" dur="4.5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- slow gloss sweep -->
+    <rect x="-240" y="0" width="240" height="186" fill="url(#gloss)">
+      <animate attributeName="x" values="-240;580" dur="9s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+
+    <g class="in">
+      <g transform="translate(424,25)"><rect x="0" y="0" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.00s" repeatCount="indefinite"/></rect><rect x="9" y="0" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.16s" repeatCount="indefinite"/></rect><rect x="18" y="0" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.32s" repeatCount="indefinite"/></rect><rect x="0" y="9" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.48s" repeatCount="indefinite"/></rect><rect x="9" y="9" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.64s" repeatCount="indefinite"/></rect><rect x="18" y="9" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.80s" repeatCount="indefinite"/></rect><rect x="0" y="18" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.96s" repeatCount="indefinite"/></rect><rect x="9" y="18" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="1.12s" repeatCount="indefinite"/></rect><rect x="18" y="18" width="6" height="6" rx="1.5" fill="#00c2ff"><animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="1.28s" repeatCount="indefinite"/></rect></g>
+      <text class="ch" x="22" y="46">Tinfoil-Themes</text>
+      <g transform="translate(466,26)">
+        <rect width="96" height="22" rx="11" fill="#00c2ff" fill-opacity="0.14"
+          stroke="#00c2ff" stroke-opacity="0.5"/>
+        <text class="cs" x="48" y="15" text-anchor="middle">173 entries</text>
+      </g>
+      <path d="M22 60 H 558" stroke="#00c2ff" stroke-opacity="0.18" stroke-width="1"/>
+      <text class="cd" x="22" y="96">The database everything else reads — community and original Tinfoil</text><text class="cd" x="22" y="116">themes, served straight off GitHub Pages and browsable from inside</text><text class="cd" x="22" y="136">the editor and from the console, without leaving either one.</text>
+      <g transform="translate(22,144)"><rect width="52" height="24" rx="12" fill="#00c2ff" fill-opacity="0.11" stroke="#00c2ff" stroke-opacity="0.45"/><text class="tg" x="26" y="16" fill="#00c2ff" text-anchor="middle">JSON</text></g><g transform="translate(83,144)"><rect width="105" height="24" rx="12" fill="#5be27a" fill-opacity="0.11" stroke="#5be27a" stroke-opacity="0.45"/><text class="tg" x="52" y="16" fill="#5be27a" text-anchor="middle">GitHub Pages</text></g><g transform="translate(197,144)"><rect width="98" height="24" rx="12" fill="#9d4edd" fill-opacity="0.11" stroke="#9d4edd" stroke-opacity="0.45"/><text class="tg" x="49" y="16" fill="#9d4edd" text-anchor="middle">170+ themes</text></g><g transform="translate(304,144)"><rect width="118" height="24" rx="12" fill="#7d95ae" fill-opacity="0.11" stroke="#7d95ae" stroke-opacity="0.45"/><text class="tg" x="59" y="16" fill="#7d95ae" text-anchor="middle">secret-scanned</text></g>
+    </g>
+    <rect x="0.5" y="0.5" width="579" height="185" rx="12" fill="none"
+      stroke="#00c2ff" stroke-opacity="0.28"/>
+  </g>
+</svg>

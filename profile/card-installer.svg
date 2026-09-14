@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 186"
+  width="580" height="186" role="img" aria-labelledby="ct cd">
+  <title id="ct">Switch-Theme-Installer</title>
+  <desc id="cd">Switch-Theme-Installer — native C. A .nro that runs on the console itself. Browses the live database over the Switch's own network stack, previews a theme with SDL2, and runs k-means palette extraction on-device, rewriting the JSON in place. Built with: C, devkitA64 / libnx, SDL2, zziplib · jsmn.</desc>
+  <defs>
+    <pattern id="gc" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ff3c50" stroke-opacity="0.05" stroke-width="1"/></pattern>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff3c50" stop-opacity="0.15"/>
+      <stop offset="0.5" stop-color="#ff3c50" stop-opacity="1"/>
+      <stop offset="1" stop-color="#ff3c50" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.055"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="cf"><rect width="580" height="186" rx="12"/></clipPath>
+  </defs>
+  <style>
+    .ch { font: 700 19px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #ff3c50; }
+    .cs { font: 700 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #ff3c50; }
+    .cd { font: 400 12.5px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #a8bdd4; }
+    .tg { font: 600 11px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; }
+    .in { opacity: 0; animation: cin .8s cubic-bezier(.2,.8,.2,1) forwards; }
+    @keyframes cin { from { opacity: 0 } to { opacity: 1 } }
+  </style>
+  <g clip-path="url(#cf)">
+    <rect width="580" height="186" fill="#101c2c"/>
+    <rect width="580" height="186" fill="url(#gc)"/>
+
+    <!-- left edge, breathing -->
+    <rect width="4" height="186" fill="url(#edge)">
+      <animate attributeName="opacity" values="0.55;1;0.55" dur="4.5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- slow gloss sweep -->
+    <rect x="-240" y="0" width="240" height="186" fill="url(#gloss)">
+      <animate attributeName="x" values="-240;580" dur="9s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+
+    <g class="in">
+      <g transform="translate(440,25)"><rect x="0" y="14" width="4" height="10" rx="2" fill="#ff3c50"><animate attributeName="height" values="10;5;10" dur="1.6s" repeatCount="indefinite"/><animate attributeName="y" values="14;19;14" dur="1.6s" repeatCount="indefinite"/></rect><rect x="7" y="6" width="4" height="18" rx="2" fill="#ff3c50"><animate attributeName="height" values="18;9;18" dur="1.8s" repeatCount="indefinite"/><animate attributeName="y" values="6;15;6" dur="1.8s" repeatCount="indefinite"/></rect><rect x="14" y="0" width="4" height="24" rx="2" fill="#ff3c50"><animate attributeName="height" values="24;12;24" dur="2.0s" repeatCount="indefinite"/><animate attributeName="y" values="0;12;0" dur="2.0s" repeatCount="indefinite"/></rect><rect x="21" y="8" width="4" height="16" rx="2" fill="#ff3c50"><animate attributeName="height" values="16;8;16" dur="2.2s" repeatCount="indefinite"/><animate attributeName="y" values="8;16;8" dur="2.2s" repeatCount="indefinite"/></rect><rect x="28" y="16" width="4" height="8" rx="2" fill="#ff3c50"><animate attributeName="height" values="8;4;8" dur="2.4s" repeatCount="indefinite"/><animate attributeName="y" values="16;20;16" dur="2.4s" repeatCount="indefinite"/></rect></g>
+      <text class="ch" x="22" y="46">Switch-Theme-Installer</text>
+      <g transform="translate(486,26)">
+        <rect width="76" height="22" rx="11" fill="#ff3c50" fill-opacity="0.14"
+          stroke="#ff3c50" stroke-opacity="0.5"/>
+        <text class="cs" x="38" y="15" text-anchor="middle">native C</text>
+      </g>
+      <path d="M22 60 H 558" stroke="#ff3c50" stroke-opacity="0.18" stroke-width="1"/>
+      <text class="cd" x="22" y="96">A .nro that runs on the console itself. Browses the live database over</text><text class="cd" x="22" y="116">the Switch's own network stack, previews a theme with SDL2, and runs</text><text class="cd" x="22" y="136">k-means palette extraction on-device, rewriting the JSON in place.</text>
+      <g transform="translate(22,144)"><rect width="42" height="24" rx="12" fill="#ff3c50" fill-opacity="0.11" stroke="#ff3c50" stroke-opacity="0.45"/><text class="tg" x="21" y="16" fill="#ff3c50" text-anchor="middle">C</text></g><g transform="translate(73,144)"><rect width="138" height="24" rx="12" fill="#00c2ff" fill-opacity="0.11" stroke="#00c2ff" stroke-opacity="0.45"/><text class="tg" x="69" y="16" fill="#00c2ff" text-anchor="middle">devkitA64 / libnx</text></g><g transform="translate(220,144)"><rect width="52" height="24" rx="12" fill="#9d4edd" fill-opacity="0.11" stroke="#9d4edd" stroke-opacity="0.45"/><text class="tg" x="26" y="16" fill="#9d4edd" text-anchor="middle">SDL2</text></g><g transform="translate(281,144)"><rect width="118" height="24" rx="12" fill="#7d95ae" fill-opacity="0.11" stroke="#7d95ae" stroke-opacity="0.45"/><text class="tg" x="59" y="16" fill="#7d95ae" text-anchor="middle">zziplib · jsmn</text></g>
+    </g>
+    <rect x="0.5" y="0.5" width="579" height="185" rx="12" fill="none"
+      stroke="#ff3c50" stroke-opacity="0.28"/>
+  </g>
+</svg>

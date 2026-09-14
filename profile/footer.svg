@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 152"
+  width="1200" height="152" role="img" aria-labelledby="ftTitle ftDesc">
+  <title id="ftTitle">Got a config file? Talk to me.</title>
+  <desc id="ftDesc">Animated footer: three coloured waves rolling under the line "got a config file, a locked bootloader, or a UI begging to be re-themed?".</desc>
+  <defs><clipPath id="ff"><rect width="1200" height="152" rx="14"/></clipPath></defs>
+  <style>
+    .f1 { font: 700 22px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #eaf1fa; }
+    .f2 { font: 400 13.5px ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace; fill: #7d95ae; }
+  </style>
+  <g clip-path="url(#ff)">
+    <rect width="1200" height="152" fill="#0b1420"/>
+    <g><path d="M-1200 96 C -1000 76, -800 116, -600 96 C -400 76, -200 116, 0 96 C 200 76, 400 116, 600 96 C 800 76, 1000 116, 1200 96 C 1400 76, 1600 116, 1800 96 C 2000 76, 2200 116, 2400 96" fill="none" stroke="#00c2ff" stroke-opacity="0.55" stroke-width="2"/><animateTransform attributeName="transform" type="translate" values="0 0; 1200 0" dur="9s" repeatCount="indefinite"/></g><g><path d="M-1200 110 C -1000 84, -800 136, -600 110 C -400 84, -200 136, 0 110 C 200 84, 400 136, 600 110 C 800 84, 1000 136, 1200 110 C 1400 84, 1600 136, 1800 110 C 2000 84, 2200 136, 2400 110" fill="none" stroke="#9d4edd" stroke-opacity="0.45" stroke-width="2"/><animateTransform attributeName="transform" type="translate" values="0 0; 1200 0" dur="11s" repeatCount="indefinite"/></g><g><path d="M-1200 124 C -1000 108, -800 140, -600 124 C -400 108, -200 140, 0 124 C 200 108, 400 140, 600 124 C 800 108, 1000 140, 1200 124 C 1400 108, 1600 140, 1800 124 C 2000 108, 2200 140, 2400 124" fill="none" stroke="#ff3c50" stroke-opacity="0.35" stroke-width="2"/><animateTransform attributeName="transform" type="translate" values="0 0; 1200 0" dur="13s" repeatCount="indefinite"/></g>
+    <text class="f1" x="600" y="48" text-anchor="middle">got a config file?</text>
+    <text class="f2" x="600" y="74" text-anchor="middle">a locked bootloader, or a UI that is begging to be re-themed? talk to me.</text>
+    <rect x="0.5" y="0.5" width="1199" height="151" rx="14" fill="none" stroke="#1d2e44"/>
+  </g>
+</svg>

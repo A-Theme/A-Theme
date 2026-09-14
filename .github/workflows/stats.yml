@@ -39,32 +39,8 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate Theme-App pin
-        continue-on-error: true
-        uses: stats-organization/github-readme-stats-action@main
-        with:
-          card: pin
-          options: "username=A-Theme&repo=Theme-App&theme=radical&hide_border=true&bg_color=0b1420"
-          path: profile/pin-theme-app.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate Switch-Theme-Installer pin
-        continue-on-error: true
-        uses: stats-organization/github-readme-stats-action@main
-        with:
-          card: pin
-          options: "username=A-Theme&repo=Switch-Theme-Installer&theme=radical&hide_border=true&bg_color=0b1420"
-          path: profile/pin-switch-installer.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate Tinfoil-Themes pin
-        continue-on-error: true
-        uses: stats-organization/github-readme-stats-action@main
-        with:
-          card: pin
-          options: "username=A-Theme&repo=Tinfoil-Themes&theme=radical&hide_border=true&bg_color=0b1420"
-          path: profile/pin-tinfoil-themes.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       # Trophy: the self-hosted generator action (Erik-Donath's unmerged
       # feature/generate-svg branch) has now failed twice for two
@@ -132,6 +108,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg
+          # only the cards this workflow generates; the hand-built
+          # assets (hero, now, pipeline, cards, footer) are committed
+          # by hand from profile/build-assets.py and must not be
+          # touched by a bot run
+          git add profile/stats.svg profile/top-langs.svg profile/lifetime-badge.svg
           git diff --cached --quiet || git commit -m "Update stats cards [skip ci]"
           git push
