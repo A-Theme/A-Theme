@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 186"
   width="580" height="186" role="img" aria-labelledby="ct cd">
   <title id="ct">Switch-Theme-Installer</title>
-  <desc id="cd">Switch-Theme-Installer — native C. A .nro that runs on the console itself. Browses the live database over the Switch's own network stack, previews a theme with SDL2, and runs k-means palette extraction on-device, rewriting the JSON in place. Built with: C, devkitA64 / libnx, SDL2, zziplib · jsmn.</desc>
+  <desc id="cd">Switch-Theme-Installer — native C. A .nro that installs Tinfoil themes on the console itself. Browses the database over the Switch's own network stack, previews with SDL2, and runs k-means palette extraction on-device, in place. Built with: C, devkitA64 / libnx, SDL2, zziplib · jsmn.</desc>
   <defs>
     <pattern id="gc" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ff3c50" stroke-opacity="0.05" stroke-width="1"/></pattern>
     <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
@@ -47,7 +47,7 @@
         <text class="cs" x="38" y="15" text-anchor="middle">native C</text>
       </g>
       <path d="M22 60 H 558" stroke="#ff3c50" stroke-opacity="0.18" stroke-width="1"/>
-      <text class="cd" x="22" y="96">A .nro that runs on the console itself. Browses the live database over</text><text class="cd" x="22" y="116">the Switch's own network stack, previews a theme with SDL2, and runs</text><text class="cd" x="22" y="136">k-means palette extraction on-device, rewriting the JSON in place.</text>
+      <text class="cd" x="22" y="96">A .nro that installs Tinfoil themes on the console itself. Browses</text><text class="cd" x="22" y="116">the database over the Switch's own network stack, previews with SDL2,</text><text class="cd" x="22" y="136">and runs k-means palette extraction on-device, in place.</text>
       <g transform="translate(22,144)"><rect width="42" height="24" rx="12" fill="#ff3c50" fill-opacity="0.11" stroke="#ff3c50" stroke-opacity="0.45"/><text class="tg" x="21" y="16" fill="#ff3c50" text-anchor="middle">C</text></g><g transform="translate(73,144)"><rect width="138" height="24" rx="12" fill="#00c2ff" fill-opacity="0.11" stroke="#00c2ff" stroke-opacity="0.45"/><text class="tg" x="69" y="16" fill="#00c2ff" text-anchor="middle">devkitA64 / libnx</text></g><g transform="translate(220,144)"><rect width="52" height="24" rx="12" fill="#9d4edd" fill-opacity="0.11" stroke="#9d4edd" stroke-opacity="0.45"/><text class="tg" x="26" y="16" fill="#9d4edd" text-anchor="middle">SDL2</text></g><g transform="translate(281,144)"><rect width="118" height="24" rx="12" fill="#7d95ae" fill-opacity="0.11" stroke="#7d95ae" stroke-opacity="0.45"/><text class="tg" x="59" y="16" fill="#7d95ae" text-anchor="middle">zziplib · jsmn</text></g>
     </g>
     <rect x="0.5" y="0.5" width="579" height="185" rx="12" fill="none"

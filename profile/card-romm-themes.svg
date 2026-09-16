@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 186"
   width="580" height="186" role="img" aria-labelledby="ct cd">
   <title id="ct">RomM-Themes</title>
-  <desc id="cd">RomM-Themes — 101 themes. Themes for the RomM Switch client: 19 semantic colour roles, backgrounds with free drift/pan/zoom motion, sprite-sheet animation, a replacement font, mascot art, music — and CI validates every one. Built with: JSON, 19 roles, CI-validated, contrast-checked.</desc>
+  <desc id="cd">RomM-Themes — 134 themes. The main line of work. Themes for the RomM Switch client: 19 semantic colour roles, animated backgrounds, font, mascot art and music — plus the sheet maker that builds them. CI validates every one. Built with: JSON, 19 roles, CI-validated, sheet maker.</desc>
   <defs>
     <pattern id="gc" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#5be27a" stroke-opacity="0.05" stroke-width="1"/></pattern>
     <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
@@ -44,11 +44,11 @@
       <g transform="translate(472,26)">
         <rect width="90" height="22" rx="11" fill="#5be27a" fill-opacity="0.14"
           stroke="#5be27a" stroke-opacity="0.5"/>
-        <text class="cs" x="45" y="15" text-anchor="middle">101 themes</text>
+        <text class="cs" x="45" y="15" text-anchor="middle">134 themes</text>
       </g>
       <path d="M22 60 H 558" stroke="#5be27a" stroke-opacity="0.18" stroke-width="1"/>
-      <text class="cd" x="22" y="96">Themes for the RomM Switch client: 19 semantic colour roles,</text><text class="cd" x="22" y="116">backgrounds with free drift/pan/zoom motion, sprite-sheet animation,</text><text class="cd" x="22" y="136">a replacement font, mascot art, music — and CI validates every one.</text>
-      <g transform="translate(22,144)"><rect width="52" height="24" rx="12" fill="#5be27a" fill-opacity="0.11" stroke="#5be27a" stroke-opacity="0.45"/><text class="tg" x="26" y="16" fill="#5be27a" text-anchor="middle">JSON</text></g><g transform="translate(83,144)"><rect width="78" height="24" rx="12" fill="#00c2ff" fill-opacity="0.11" stroke="#00c2ff" stroke-opacity="0.45"/><text class="tg" x="39" y="16" fill="#00c2ff" text-anchor="middle">19 roles</text></g><g transform="translate(170,144)"><rect width="105" height="24" rx="12" fill="#9d4edd" fill-opacity="0.11" stroke="#9d4edd" stroke-opacity="0.45"/><text class="tg" x="52" y="16" fill="#9d4edd" text-anchor="middle">CI-validated</text></g><g transform="translate(284,144)"><rect width="131" height="24" rx="12" fill="#7d95ae" fill-opacity="0.11" stroke="#7d95ae" stroke-opacity="0.45"/><text class="tg" x="66" y="16" fill="#7d95ae" text-anchor="middle">contrast-checked</text></g>
+      <text class="cd" x="22" y="96">The main line of work. Themes for the RomM Switch client: 19 semantic</text><text class="cd" x="22" y="116">colour roles, animated backgrounds, font, mascot art and music — plus</text><text class="cd" x="22" y="136">the sheet maker that builds them. CI validates every one.</text>
+      <g transform="translate(22,144)"><rect width="52" height="24" rx="12" fill="#5be27a" fill-opacity="0.11" stroke="#5be27a" stroke-opacity="0.45"/><text class="tg" x="26" y="16" fill="#5be27a" text-anchor="middle">JSON</text></g><g transform="translate(83,144)"><rect width="78" height="24" rx="12" fill="#00c2ff" fill-opacity="0.11" stroke="#00c2ff" stroke-opacity="0.45"/><text class="tg" x="39" y="16" fill="#00c2ff" text-anchor="middle">19 roles</text></g><g transform="translate(170,144)"><rect width="105" height="24" rx="12" fill="#9d4edd" fill-opacity="0.11" stroke="#9d4edd" stroke-opacity="0.45"/><text class="tg" x="52" y="16" fill="#9d4edd" text-anchor="middle">CI-validated</text></g><g transform="translate(284,144)"><rect width="98" height="24" rx="12" fill="#7d95ae" fill-opacity="0.11" stroke="#7d95ae" stroke-opacity="0.45"/><text class="tg" x="49" y="16" fill="#7d95ae" text-anchor="middle">sheet maker</text></g>
     </g>
     <rect x="0.5" y="0.5" width="579" height="185" rx="12" fill="none"
       stroke="#5be27a" stroke-opacity="0.28"/>

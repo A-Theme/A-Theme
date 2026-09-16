@@ -20,7 +20,7 @@ TX, MU, DIM = "#eaf1fa", "#a8bdd4", "#7d95ae"
 #   Tinfoil-Themes: len(themes.json["themes"])
 #   RomM-Themes:    manifest.json["count"]  (the validator keeps it current)
 TINFOIL_COUNT = 173
-ROMM_COUNT = 101
+ROMM_COUNT = 134
 
 MONO = "ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace"
 
@@ -214,10 +214,11 @@ def build_hero():
 def build_now():
     W, H = 1200, 232
     lines = [
-        ("$", "now", CY, None),
-        ("→", "Switch-Theme-Installer", RD, "k-means palette extraction, running on the console itself, in C"),
+        ("$", "now", GR, None),
+        ("→", "RomM-Themes", GR, f"{ROMM_COUNT} themes for the RomM Switch client — the main line of work"),
+        ("→", "spritesheet-maker", GR, "animated backgrounds, packed the way the client reads them"),
+        ("→", "Theme-App 2.2.0", CY, "focus effects and per-role alpha in the RomM editor"),
         ("→", "switch-rom-forwarder", PU, "HOME-menu forwarders built on-device — no PC in the loop"),
-        ("→", "Theme-App 2.1.0", CY, "two editors, one brand, desktop build cut by CI"),
         ("→", "dinner-by-derek", OC, "a supper club that runs off a phone. no Switch in sight"),
     ]
     CYCLE = 22.0          # whole loop
@@ -343,33 +344,33 @@ def build_pipeline():
                      "browser  ·  installable PWA  ·  Windows desktop",
                      "two editors, one launcher, one codebase"))
     # ---- tier 2: the databases
-    parts.append(box(120, 210, 380, 78, GR, "Tinfoil-Themes",
-                     f"themes.json  ·  {TINFOIL_COUNT} entries",
-                     "served from GitHub Pages"))
-    parts.append(box(700, 210, 380, 78, PU, "RomM-Themes",
+    parts.append(box(120, 210, 380, 78, GR, "RomM-Themes",
                      f"manifest.json  ·  {ROMM_COUNT} themes  ·  19 roles",
                      "every submission validated in CI"))
+    parts.append(box(700, 210, 380, 78, CY, "Tinfoil-Themes",
+                     f"themes.json  ·  {TINFOIL_COUNT} entries",
+                     "stable — served from GitHub Pages"))
     # ---- tier 3: the consoles
-    parts.append(box(120, 372, 380, 62, RD, "Switch-Theme-Installer",
-                     ".nro  ·  C  ·  devkitA64 / libnx / SDL2"))
-    parts.append(box(700, 372, 380, 62, PU, "RomM Switch client",
+    parts.append(box(120, 372, 380, 62, GR, "RomM Switch client",
                      "SDL2 homebrew  ·  reads a folder on the SD card"))
+    parts.append(box(700, 372, 380, 62, RD, "Switch-Theme-Installer",
+                     ".nro  ·  C  ·  devkitA64 / libnx / SDL2"))
 
     # ---- wires: editors -> databases
-    parts.append(wire(1, "M540 118 C 440 160, 330 160, 310 210", CY, 3, 3.2,
-                      "exports settings.json", 392, 202))
+    parts.append(wire(1, "M540 118 C 440 160, 330 160, 310 210", GR, 3, 3.2,
+                      "exports a theme.json or a .zip pack", 300, 202))
     parts.append(wire(2, "M660 118 C 760 160, 870 160, 890 210", CY, 3, 3.2,
-                      "exports a theme.json or a .zip pack", 596, 202))
+                      "exports settings.json", 700, 202))
     # ---- wires: databases -> editors (the catalog read, going back up)
     parts.append(wire(3, "M250 210 C 200 150, 300 128, 420 118", GR, 2, 4.2,
-                      "browse the live catalog, in-app", 96, 126))
-    parts.append(wire(4, "M950 210 C 1000 150, 900 128, 780 118", PU, 2, 4.2,
-                      "opens a published theme, assets and all", 866, 126))
+                      "opens a published theme, assets and all", 60, 126))
+    parts.append(wire(4, "M950 210 C 1000 150, 900 128, 780 118", CY, 2, 4.2,
+                      "browse the live catalog, in-app", 900, 126))
     # ---- wires: databases -> consoles
     parts.append(wire(5, "M310 288 L 310 372", GR, 2, 2.6,
-                      "read live over the console's own network stack", 330, 330))
-    parts.append(wire(6, "M890 288 L 890 372", PU, 2, 2.6,
-                      "the same manifest the console reads", 700, 330))
+                      "the same manifest the console reads", 330, 330))
+    parts.append(wire(6, "M890 288 L 890 372", CY, 2, 2.6,
+                      "read live over the console's own network stack", 600, 330))
 
     legend = (
         f'<g transform="translate(40,{H-14})">'
@@ -381,7 +382,7 @@ def build_pipeline():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
   width="{W}" height="{H}" role="img" aria-labelledby="pipeTitle pipeDesc">
   <title id="pipeTitle">How the A-Theme project fits together</title>
-  <desc id="pipeDesc">A system map. Theme-App (browser, PWA and Windows desktop) exports themes into two databases: Tinfoil-Themes (themes.json, {TINFOIL_COUNT} entries, served from GitHub Pages) and RomM-Themes (manifest.json, {ROMM_COUNT} themes, 19 colour roles, validated in CI). Both databases are browsable from inside the editors, and both are read on the console itself: Tinfoil-Themes by Switch-Theme-Installer, a C homebrew .nro, and RomM-Themes by the RomM Switch client.</desc>
+  <desc id="pipeDesc">A system map. Theme-App (browser, PWA and Windows desktop) exports themes into two databases. The active one is RomM-Themes (manifest.json, {ROMM_COUNT} themes, 19 colour roles, validated in CI), read on the console by the RomM Switch client, an SDL2 homebrew app. The older one is Tinfoil-Themes (themes.json, {TINFOIL_COUNT} entries, served from GitHub Pages), read by Switch-Theme-Installer, a C homebrew .nro. Both databases are browsable from inside the editors.</desc>
   <defs>
     {grid_def("gpipe", CY, 40, 0.045)}
     <clipPath id="pipeframe"><rect width="{W}" height="{H}" rx="14"/></clipPath>
@@ -531,44 +532,44 @@ write("now.svg", build_now())
 write("pipeline.svg", build_pipeline())
 
 CARDS = [
-    ("card-theme-app.svg", CY, "Theme-App", "v2.1.0",
-     ["Two visual editors — Tinfoil's settings.json and the RomM client's",
-      "theme.json — in a browser, as an installable PWA, and as a Windows",
-      "desktop build the release workflow cuts on every tag."],
+    ("card-romm-themes.svg", GR, "RomM-Themes", f"{ROMM_COUNT} themes",
+     ["The main line of work. Themes for the RomM Switch client: 19 semantic",
+      "colour roles, animated backgrounds, font, mascot art and music \u2014 plus",
+      "the sheet maker that builds them. CI validates every one."],
+     [("JSON", GR), ("19 roles", CY), ("CI-validated", PU), ("sheet maker", DIM)],
+     "dots"),
+
+    ("card-theme-app.svg", CY, "Theme-App", "v2.2.0",
+     ["The RomM theme editor \u2014 19 colour roles with per-role alpha, and",
+      "motion and focus effects ported from the client's own code, drawn at",
+      "the console's real 1280x720. The Tinfoil editor lives here too."],
      [("HTML/JS", CY), ("Electron", PU), ("PWA", GR), ("no build step", DIM)],
      "dots"),
 
-    ("card-installer.svg", RD, "Switch-Theme-Installer", "native C",
-     ["A .nro that runs on the console itself. Browses the live database over",
-      "the Switch's own network stack, previews a theme with SDL2, and runs",
-      "k-means palette extraction on-device, rewriting the JSON in place."],
-     [("C", RD), ("devkitA64 / libnx", CY), ("SDL2", PU), ("zziplib · jsmn", DIM)],
-     "wave"),
-
-    ("card-forwarder.svg", PU, "switch-rom-forwarder", "new · early",
+    ("card-forwarder.svg", PU, "switch-rom-forwarder", "new \u00b7 early",
      ["HOME-menu forwarders for retro games, generated on the console with no",
       "PC in the loop. CRC32 against No-Intro DATs to recover real titles,",
       "libretro box art, and a diff of every source before it touches a thing."],
      [("nx.js", PU), ("JavaScript", CY), ("NSP", RD), ("no devkitPro", DIM)],
      "wave"),
 
-    ("card-romm-themes.svg", GR, "RomM-Themes", f"{ROMM_COUNT} themes",
-     ["Themes for the RomM Switch client: 19 semantic colour roles,",
-      "backgrounds with free drift/pan/zoom motion, sprite-sheet animation,",
-      "a replacement font, mascot art, music \u2014 and CI validates every one."],
-     [("JSON", GR), ("19 roles", CY), ("CI-validated", PU), ("contrast-checked", DIM)],
-     "dots"),
+    ("card-installer.svg", RD, "Switch-Theme-Installer", "native C",
+     ["A .nro that installs Tinfoil themes on the console itself. Browses",
+      "the database over the Switch's own network stack, previews with SDL2,",
+      "and runs k-means palette extraction on-device, in place."],
+     [("C", RD), ("devkitA64 / libnx", CY), ("SDL2", PU), ("zziplib \u00b7 jsmn", DIM)],
+     "wave"),
 
     ("card-tinfoil-themes.svg", CY, "Tinfoil-Themes", f"{TINFOIL_COUNT} entries",
-     ["The database everything else reads — community and original Tinfoil",
-      "themes, served straight off GitHub Pages and browsable from inside",
-      "the editor and from the console, without leaving either one."],
-     [("JSON", CY), ("GitHub Pages", GR), ("170+ themes", PU), ("secret-scanned", DIM)],
+     ["The Tinfoil database \u2014 community and original themes, served off",
+      "GitHub Pages, browsable from the editor and the console. Stable and",
+      "still served; new work happens on the RomM side now."],
+     [("JSON", CY), ("GitHub Pages", GR), ("stable", PU), ("secret-scanned", DIM)],
      f'<g transform="translate(516,120)">{dots_glyph(CY)}</g>'),
 
-    ("card-dinner.svg", OC, "dinner-by-derek", "new · not a Switch",
+    ("card-dinner.svg", OC, "dinner-by-derek", "new \u00b7 not a Switch",
      ["An installable ordering app for a supper club: no app store, no",
-      "accounts, no online payment — a site that installs to a home screen.",
+      "accounts, no online payment \u2014 a site that installs to a home screen.",
       "One-file SQLite, measured WCAG contrast, print cards at 300 DPI."],
      [("Node 20", GR), ("Express 5", OC), ("SQLite", CY), ("PWA", PU)],
      "dots"),

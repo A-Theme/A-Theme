@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 186"
   width="580" height="186" role="img" aria-labelledby="ct cd">
   <title id="ct">Theme-App</title>
-  <desc id="cd">Theme-App — v2.1.0. Two visual editors — Tinfoil's settings.json and the RomM client's theme.json — in a browser, as an installable PWA, and as a Windows desktop build the release workflow cuts on every tag. Built with: HTML/JS, Electron, PWA, no build step.</desc>
+  <desc id="cd">Theme-App — v2.2.0. The RomM theme editor — 19 colour roles with per-role alpha, and motion and focus effects ported from the client's own code, drawn at the console's real 1280x720. The Tinfoil editor lives here too. Built with: HTML/JS, Electron, PWA, no build step.</desc>
   <defs>
     <pattern id="gc" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#00c2ff" stroke-opacity="0.05" stroke-width="1"/></pattern>
     <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
@@ -44,10 +44,10 @@
       <g transform="translate(499,26)">
         <rect width="63" height="22" rx="11" fill="#00c2ff" fill-opacity="0.14"
           stroke="#00c2ff" stroke-opacity="0.5"/>
-        <text class="cs" x="32" y="15" text-anchor="middle">v2.1.0</text>
+        <text class="cs" x="32" y="15" text-anchor="middle">v2.2.0</text>
       </g>
       <path d="M22 60 H 558" stroke="#00c2ff" stroke-opacity="0.18" stroke-width="1"/>
-      <text class="cd" x="22" y="96">Two visual editors — Tinfoil's settings.json and the RomM client's</text><text class="cd" x="22" y="116">theme.json — in a browser, as an installable PWA, and as a Windows</text><text class="cd" x="22" y="136">desktop build the release workflow cuts on every tag.</text>
+      <text class="cd" x="22" y="96">The RomM theme editor — 19 colour roles with per-role alpha, and</text><text class="cd" x="22" y="116">motion and focus effects ported from the client's own code, drawn at</text><text class="cd" x="22" y="136">the console's real 1280x720. The Tinfoil editor lives here too.</text>
       <g transform="translate(22,144)"><rect width="72" height="24" rx="12" fill="#00c2ff" fill-opacity="0.11" stroke="#00c2ff" stroke-opacity="0.45"/><text class="tg" x="36" y="16" fill="#00c2ff" text-anchor="middle">HTML/JS</text></g><g transform="translate(103,144)"><rect width="78" height="24" rx="12" fill="#9d4edd" fill-opacity="0.11" stroke="#9d4edd" stroke-opacity="0.45"/><text class="tg" x="39" y="16" fill="#9d4edd" text-anchor="middle">Electron</text></g><g transform="translate(190,144)"><rect width="45" height="24" rx="12" fill="#5be27a" fill-opacity="0.11" stroke="#5be27a" stroke-opacity="0.45"/><text class="tg" x="22" y="16" fill="#5be27a" text-anchor="middle">PWA</text></g><g transform="translate(244,144)"><rect width="111" height="24" rx="12" fill="#7d95ae" fill-opacity="0.11" stroke="#7d95ae" stroke-opacity="0.45"/><text class="tg" x="56" y="16" fill="#7d95ae" text-anchor="middle">no build step</text></g>
     </g>
     <rect x="0.5" y="0.5" width="579" height="185" rx="12" fill="none"

@@ -35,7 +35,7 @@ rule
 
 <div align="center">
 
-<img src="profile/now.svg" alt="Now: k-means palette extraction on the console in C; HOME-menu forwarders built on-device; Theme-App 2.1.0 with two editors and a CI desktop build; and a supper-club ordering app" width="100%"/>
+<img src="profile/now.svg" alt="Now: 134 RomM themes and the sprite sheet maker that builds their animated backgrounds; Theme-App 2.2.0 with focus effects and per-role alpha in the RomM editor; HOME-menu forwarders built on-device; and a supper-club ordering app" width="100%"/>
 
 </div>
 
@@ -43,11 +43,11 @@ rule
 
 ## 🧩 How It All Fits Together
 
-The A-Theme project is one pipeline with two theme formats at the end of it — author a theme in the editor, publish it to a database, read it back on the console. Every arrow below is a code path that actually ships:
+The A-Theme project is one pipeline with two theme formats at the end of it — author a theme in the editor, publish it to a database, read it back on the console. The **RomM** path is the live one; the Tinfoil path still works and is still served, but that app has been overtaken. Every arrow below is a code path that actually ships:
 
 <div align="center">
 
-<img src="profile/pipeline.svg" alt="System map: Theme-App exports into Tinfoil-Themes and RomM-Themes; both databases are browsable from inside the editors and read on the console by Switch-Theme-Installer and the RomM Switch client" width="100%"/>
+<img src="profile/pipeline.svg" alt="System map: Theme-App exports into RomM-Themes and Tinfoil-Themes; both databases are browsable from inside the editors and read on the console by the RomM Switch client and Switch-Theme-Installer" width="100%"/>
 
 </div>
 
@@ -59,18 +59,18 @@ The A-Theme project is one pipeline with two theme formats at the end of it — 
 <tr>
 <td width="50%">
 
-[![Theme-App](profile/card-theme-app.svg)](https://github.com/A-Theme/Theme-App)
+[![RomM-Themes](profile/card-romm-themes.svg)](https://github.com/A-Theme/RomM-Themes)
 
-[![stars](https://img.shields.io/github/stars/A-Theme/Theme-App?style=flat-square&label=stars&labelColor=0b1420&color=00c2ff)](https://github.com/A-Theme/Theme-App/stargazers)
-[![release](https://img.shields.io/github/v/release/A-Theme/Theme-App?style=flat-square&labelColor=0b1420&color=9d4edd)](https://github.com/A-Theme/Theme-App/releases)
+[![themes](https://img.shields.io/badge/dynamic/json?label=themes&query=%24.count&url=https%3A%2F%2Fraw.githubusercontent.com%2FA-Theme%2FRomM-Themes%2Fmain%2Fmanifest.json&style=flat-square&labelColor=0b1420&color=5be27a)](https://github.com/A-Theme/RomM-Themes/blob/main/manifest.json)
+[![validated](https://img.shields.io/github/actions/workflow/status/A-Theme/RomM-Themes/validate.yml?branch=main&label=validated&style=flat-square&labelColor=0b1420&color=5be27a)](https://github.com/A-Theme/RomM-Themes/actions/workflows/validate.yml)
 
 </td>
 <td width="50%">
 
-[![Switch-Theme-Installer](profile/card-installer.svg)](https://github.com/A-Theme/Switch-Theme-Installer)
+[![Theme-App](profile/card-theme-app.svg)](https://github.com/A-Theme/Theme-App)
 
-[![stars](https://img.shields.io/github/stars/A-Theme/Switch-Theme-Installer?style=flat-square&label=stars&labelColor=0b1420&color=ff3c50)](https://github.com/A-Theme/Switch-Theme-Installer/stargazers)
-[![language](https://img.shields.io/badge/C-devkitA64-ff3c50?style=flat-square&labelColor=0b1420)](https://github.com/A-Theme/Switch-Theme-Installer)
+[![stars](https://img.shields.io/github/stars/A-Theme/Theme-App?style=flat-square&label=stars&labelColor=0b1420&color=00c2ff)](https://github.com/A-Theme/Theme-App/stargazers)
+[![release](https://img.shields.io/github/v/release/A-Theme/Theme-App?style=flat-square&labelColor=0b1420&color=9d4edd)](https://github.com/A-Theme/Theme-App/releases)
 
 </td>
 </tr>
@@ -85,10 +85,10 @@ The A-Theme project is one pipeline with two theme formats at the end of it — 
 </td>
 <td width="50%">
 
-[![RomM-Themes](profile/card-romm-themes.svg)](https://github.com/A-Theme/RomM-Themes)
+[![Switch-Theme-Installer](profile/card-installer.svg)](https://github.com/A-Theme/Switch-Theme-Installer)
 
-[![themes](https://img.shields.io/badge/dynamic/json?label=themes&query=%24.count&url=https%3A%2F%2Fraw.githubusercontent.com%2FA-Theme%2FRomM-Themes%2Fmain%2Fmanifest.json&style=flat-square&labelColor=0b1420&color=5be27a)](https://github.com/A-Theme/RomM-Themes/blob/main/manifest.json)
-[![validated](https://img.shields.io/github/actions/workflow/status/A-Theme/RomM-Themes/validate.yml?branch=main&label=validated&style=flat-square&labelColor=0b1420&color=5be27a)](https://github.com/A-Theme/RomM-Themes/actions/workflows/validate.yml)
+[![stars](https://img.shields.io/github/stars/A-Theme/Switch-Theme-Installer?style=flat-square&label=stars&labelColor=0b1420&color=ff3c50)](https://github.com/A-Theme/Switch-Theme-Installer/stargazers)
+[![language](https://img.shields.io/badge/C-devkitA64-ff3c50?style=flat-square&labelColor=0b1420)](https://github.com/A-Theme/Switch-Theme-Installer)
 
 </td>
 </tr>
@@ -112,32 +112,32 @@ The A-Theme project is one pipeline with two theme formats at the end of it — 
 </tr>
 </table>
 
-### 🖥️ [Theme-App](https://github.com/A-Theme/Theme-App) — the visual editors
+### 🟢 [RomM-Themes](https://github.com/A-Theme/RomM-Themes) — where the work is now
 
-**Two** editors now, one per theming target, sharing a launcher and the same scaffolding — and both run as a browser app, an installable PWA, *and* a Windows desktop build the release workflow cuts from `CHANGELOG.md` on every tag.
+The **RomM Switch client** — a full SDL2 homebrew app rather than a shop — is where most of this project points these days. A theme there is a folder on the SD card and changes far more than a colour scheme; **134 themes** published so far:
 
-On the **Tinfoil** side:
+- **19 semantic colour roles** — not raw palette slots, so a theme stays coherent as screens get added
+- **Backgrounds** with a dim control, plus `drift`/`pan`/`zoom` motion that costs **zero extra memory**, and real frame animation via sprite sheets
+- **Replacement font, mascot art, and music** — including tracker modules, often a few KB for minutes of audio
+- Every submission is **validated in CI against the same rules the client enforces**, so a typo'd colour role or an uncommitted background never reaches a console
+- Animated backgrounds are **budgeted, not trusted**: one 720p frame is 3.6 MB of texture, so there's a 48 MB ceiling — and an animation over budget falls back to the still image in the preview, because that's what the console does with it
+- **[`tools/spritesheet-maker`](https://github.com/A-Theme/RomM-Themes/tree/main/tools/spritesheet-maker)** — *new* — a local app that turns a GIF, a video or one still image into a sheet the client can actually read. The client slices `cols = sheet_w / frame_width` from the top-left, so a sheet with padding between cells misaligns every frame after the first and nothing says so until it plays wrong on hardware. It ports the client's own acceptance rules — the 48 MB texture budget, the 240-frame and 60 fps ceilings, a cell that isn't 16:9 — and measures frame brightness the way the catalogue's validator does, since `dim` is tuned against the still image while the frames are what text sits on. Drop a file and the sheet, a playable preview and the `theme.json` block appear; ships as one executable per platform, ffmpeg included
 
-- **Browse the entire live theme database from inside the app** and load one with a click — it downloads and unzips the archive **entirely client-side** (real embedded JSZip, no server involved) and wires up every bundled logo, background and audio file automatically
-- **Palette generation via real k-means colour clustering**, extracted straight from your background image — not a gimmick, actual dominant-colour maths
-- **A pixel-accurate mockup preview** of the real Tinfoil layout where every visible piece is hoverable: hover a selection tile and it names the JSON field that controls it; click it and the form scrolls there and highlights it
-- Full alpha/transparency support with a visual slider and diagram, because hex colour formats are not intuitive and I got tired of explaining them
+### 🖥️ [Theme-App](https://github.com/A-Theme/Theme-App) — the editor for those themes
 
-On the **RomM** side:
+Two editors, one per theming target, sharing a launcher and the same scaffolding — each runs as a browser app, an installable PWA, *and* a Windows desktop build the release workflow cuts from `CHANGELOG.md` on every tag. The **RomM** editor is where the work goes:
 
 - **Browse the published catalog from inside the editor** — it reads the same `manifest.json` the console reads, and opens a theme with its background, font, mascot and music downloaded, so the quickest way to start is to open the nearest existing theme and change it. The URL handling deliberately mirrors the client's own `theme_catalog.cpp`, percent-encoding byte for byte
 - **Background motion that actually plays** — `drift`/`pan`/`zoom` and sprite-sheet animation, previewed by a *port of the client's own `theme_motion.cpp`* rather than something that merely looks like drift. A differential test runs **6336 inputs through both implementations and requires byte-identical output**; it earned its keep immediately, catching that the console computes in 32-bit float where the first port was a whole pixel off at some timestamps
 - **Import a folder, a `.zip` pack, or a bare `theme.json`** — a `theme.json` only *names* its background, so importing one file used to hand you colours and five dangling references
 - **20 starting palettes**, each setting all 19 roles and contrast-checked on the pairs that actually break a theme: body text over all three surfaces, muted text, the focus ring, and whatever sits on an accent fill
 
-### 🎮 [Switch-Theme-Installer](https://github.com/A-Theme/Switch-Theme-Installer) — native homebrew, on the console itself
+And the **Tinfoil** editor, still maintained, no longer where new work lands:
 
-The one I'm most proud of. A native C application (`.nro`) that runs *directly on a Nintendo Switch* — no PC required:
-
-- Reads the theme database live over the Switch's own networking stack, browsable with a controller
-- Real device rendering via SDL2 — an actual on-screen preview of a theme's colours and layout before you commit to installing it
-- **Runs the same k-means palette extraction as the browser app, but on-device** — reads raw pixels out of a decoded image on the Switch itself and rewrites the theme's JSON in place, byte-for-byte, no serializer needed
-- Built the hard way: real devkitA64/libnx toolchain, zip extraction via `zziplib`, JSON parsing via a hand-verified `jsmn` integration, and multiple real hardware test-and-fix cycles until it ran clean
+- **Browse the entire live theme database from inside the app** and load one with a click — it downloads and unzips the archive **entirely client-side** (real embedded JSZip, no server involved) and wires up every bundled logo, background and audio file automatically
+- **Palette generation via real k-means colour clustering**, extracted straight from your background image — not a gimmick, actual dominant-colour maths
+- **A pixel-accurate mockup preview** of the real Tinfoil layout where every visible piece is hoverable: hover a selection tile and it names the JSON field that controls it; click it and the form scrolls there and highlights it
+- Full alpha/transparency support with a visual slider and diagram, because hex colour formats are not intuitive and I got tired of explaining them
 
 ### 🕹️ [switch-rom-forwarder](https://github.com/A-Theme/switch-rom-forwarder) — *new* — forwarders built on-device
 
@@ -149,19 +149,18 @@ HOME-menu forwarders for retro games, generated **on the console**, with no PC i
 - **Sync mode diffs before it acts** — new / changed / missing, shown to you first. Missing entries are flagged and never auto-uninstalled, because silently removing things is a bad surprise
 - **Status: early.** The app boots, scans sources, and resolves titles and icons; the NSP build backend isn't landed yet, and the README says so in the first screen of text rather than burying it
 
-### 🟢 [RomM-Themes](https://github.com/A-Theme/RomM-Themes) — theming a second app entirely
+### 🎮 [Switch-Theme-Installer](https://github.com/A-Theme/Switch-Theme-Installer) — Tinfoil themes, installed on the console
 
-The same idea pointed at a different target: the **RomM Switch client**, a full SDL2 homebrew app rather than a shop. A theme there is a folder on the SD card and can change far more than a colour scheme — **101 themes** published so far:
+The one I'm most proud of, and the reason the Tinfoil side stays usable. A native C application (`.nro`) that runs *directly on a Nintendo Switch* — no PC required:
 
-- **19 semantic colour roles** — not raw palette slots, so a theme stays coherent as screens get added
-- **Backgrounds** with a dim control, plus `drift`/`pan`/`zoom` motion that costs **zero extra memory**, and real frame animation via sprite sheets
-- **Replacement font, mascot art, and music** — including tracker modules, often a few KB for minutes of audio
-- Every submission is **validated in CI against the same rules the client enforces**, so a typo'd colour role or an uncommitted background never reaches a console
-- Animated backgrounds are **budgeted, not trusted**: one 720p frame is 3.6 MB of texture, so there's a 48 MB ceiling — and an animation over budget falls back to the still image in the preview, because that's what the console does with it
+- Reads the theme database live over the Switch's own networking stack, browsable with a controller
+- Real device rendering via SDL2 — an actual on-screen preview of a theme's colours and layout before you commit to installing it
+- **Runs the same k-means palette extraction as the browser app, but on-device** — reads raw pixels out of a decoded image on the Switch itself and rewrites the theme's JSON in place, byte-for-byte, no serializer needed
+- Built the hard way: real devkitA64/libnx toolchain, zip extraction via `zziplib`, JSON parsing via a hand-verified `jsmn` integration, and multiple real hardware test-and-fix cycles until it ran clean
 
-### 🌈 [Tinfoil-Themes](https://github.com/A-Theme/Tinfoil-Themes) — the database itself
+### 🌈 [Tinfoil-Themes](https://github.com/A-Theme/Tinfoil-Themes) — the older database, still up
 
-**173 entries** of community and original themes, served straight off GitHub Pages, acting as the shared backbone every other tool in this project reads from — from the editor, and from the console. It also has a pre-commit secret scanner, because a Tinfoil `options.json` carries shop credentials and a theme database is exactly the kind of repo someone pastes one into by accident.
+**173 entries** of community and original themes, served straight off GitHub Pages and read from the editor and from the console. Tinfoil has largely been overtaken by the RomM client, so this is stable rather than growing: the database stays up and the installer keeps working, while new theming work happens on the RomM side. It also has a pre-commit secret scanner, because a Tinfoil `options.json` carries shop credentials and a theme database is exactly the kind of repo someone pastes one into by accident.
 
 ### 🍲 [dinner-by-derek](https://github.com/A-Theme/dinner-by-derek) — *new* — not a Switch in sight
 
