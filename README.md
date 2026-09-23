@@ -35,7 +35,7 @@ rule
 
 <div align="center">
 
-<img src="profile/now.svg" alt="Now: 134 RomM themes and the sprite sheet maker that builds their animated backgrounds; Theme-App 2.2.0 with focus effects and per-role alpha in the RomM editor; HOME-menu forwarders built on-device; and a supper-club ordering app" width="100%"/>
+<img src="profile/now.svg" alt="Now: 160 RomM themes and the sprite sheet maker that builds their animated backgrounds; Theme-App 2.3.0 with seventeen focus-effect kinds previewed live in the RomM editor; HOME-menu forwarders built on-device; and a supper-club ordering app" width="100%"/>
 
 </div>
 
@@ -114,11 +114,12 @@ The A-Theme project is one pipeline with two theme formats at the end of it — 
 
 ### 🟢 [RomM-Themes](https://github.com/A-Theme/RomM-Themes) — where the work is now
 
-The **RomM Switch client** — a full SDL2 homebrew app rather than a shop — is where most of this project points these days. A theme there is a folder on the SD card and changes far more than a colour scheme; **134 themes** published so far:
+The **RomM Switch client** — a full SDL2 homebrew app rather than a shop — is where most of this project points these days. A theme there is a folder on the SD card and changes far more than a colour scheme; **160 themes** published so far:
 
 - **19 semantic colour roles** — not raw palette slots, so a theme stays coherent as screens get added
 - **Backgrounds** with a dim control, plus `drift`/`pan`/`zoom` motion that costs **zero extra memory**, and real frame animation via sprite sheets
-- **Replacement font, mascot art, and music** — including tracker modules, often a few KB for minutes of audio
+- **Seventeen focus-effect kinds** around whatever is selected — two particle kinds, four that light the focus ring, and eleven border treatments that replace it outright. All procedural, so no art ships with them and they cost no texture memory, and the colour is a palette role rather than a hex so the effect moves with the theme. The maths is one implementation: the browser editor's port is diffed against the client's C++ across 16,133 rows, compared as raw 32-bit float patterns, so the preview is provably what the console draws
+- **Replacement font, mascot art, and music** — including tracker modules, often a few KB for minutes of audio. A theme's font does not cost the console's shared face: that stays loaded behind it and covers any string the theme's typeface has no glyph for, so a Latin-only font leaves Japanese titles readable instead of turning them into boxes
 - Every submission is **validated in CI against the same rules the client enforces**, so a typo'd colour role or an uncommitted background never reaches a console
 - Animated backgrounds are **budgeted, not trusted**: one 720p frame is 3.6 MB of texture, so there's a 48 MB ceiling — and an animation over budget falls back to the still image in the preview, because that's what the console does with it
 - **[`tools/spritesheet-maker`](https://github.com/A-Theme/RomM-Themes/tree/main/tools/spritesheet-maker)** — *new* — a local app that turns a GIF, a video or one still image into a sheet the client can actually read. The client slices `cols = sheet_w / frame_width` from the top-left, so a sheet with padding between cells misaligns every frame after the first and nothing says so until it plays wrong on hardware. It ports the client's own acceptance rules — the 48 MB texture budget, the 240-frame and 60 fps ceilings, a cell that isn't 16:9 — and measures frame brightness the way the catalogue's validator does, since `dim` is tuned against the still image while the frames are what text sits on. Drop a file and the sheet, a playable preview and the `theme.json` block appear; ships as one executable per platform, ffmpeg included
