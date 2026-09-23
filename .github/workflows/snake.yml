@@ -36,15 +36,71 @@ jobs:
       - name: Generate the snake SVG
         id: snake
         uses: actions/github-script@v7
+        env:
+          SNAKE_TOKEN: ${{ secrets.SNAKE_TOKEN }}
+          FALLBACK_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github-token: ${{ secrets.SNAKE_TOKEN }}
           script: |
             const fs = require('fs');
             const { buildSnakeSVG } = require('./profile/build-snake.js');
 
             const username = "A-Theme";
 
-            const createdRes = await github.graphql(
+            // SNAKE_TOKEN is a personal access token, so it expires. When it
+            // does, GraphQL answers 401 "Bad credentials" on the very first
+            // query and the whole job dies -- which is what froze the snake on
+            // the profile at its 7 Sep render while every run since reported
+            // failure. So each query is attempted with the PAT and then
+            // retried with the automatic GITHUB_TOKEN, which needs no
+            // maintenance and can read public contribution counts. A dead PAT
+            // now costs the private-contribution portion of the graph rather
+            // than the graph itself, and says so in the run summary.
+            const candidates = [
+              ['SNAKE_TOKEN', process.env.SNAKE_TOKEN],
+              ['GITHUB_TOKEN', process.env.FALLBACK_TOKEN],
+            ].filter(([, token]) => token);
+
+            if (!candidates.length) {
+              throw new Error('no token available: neither SNAKE_TOKEN nor GITHUB_TOKEN is set');
+            }
+
+            let working = null;
+
+            async function gql(query, variables) {
+              let lastError = 'no attempt made';
+              for (const candidate of working ? [working] : candidates) {
+                const [name, token] = candidate;
+                const res = await fetch('https://api.github.com/graphql', {
+                  method: 'POST',
+                  headers: {
+                    authorization: `bearer ${token}`,
+                    'content-type': 'application/json',
+                    'user-agent': 'A-Theme-snake',
+                  },
+                  body: JSON.stringify({ query, variables }),
+                });
+                const body = await res.json().catch(() => ({}));
+                if (res.ok && body.data && !body.errors) {
+                  if (!working) {
+                    working = candidate;
+                    if (name !== candidates[0][0]) {
+                      core.warning(
+                        `${candidates[0][0]} was rejected -- falling back to ${name}. ` +
+                        'The snake still builds, but private contributions are not ' +
+                        'counted until the PAT is renewed in repo settings > secrets.'
+                      );
+                    }
+                  }
+                  return body.data;
+                }
+                lastError = `${name}: HTTP ${res.status} ` +
+                  JSON.stringify(body.errors || body.message || body);
+                core.warning(`GraphQL rejected ${lastError}`);
+              }
+              throw new Error(`every available token failed -- last was ${lastError}`);
+            }
+
+            const createdRes = await gql(
               `query($login: String!) { user(login: $login) { createdAt } }`,
               { login: username }
             );
@@ -62,7 +118,7 @@ jobs:
             const from = new Date(Date.UTC(targetYear, 0, 1)).toISOString();
             const to = new Date(Date.UTC(targetYear, 11, 31, 23, 59, 59)).toISOString();
 
-            const dataRes = await github.graphql(
+            const dataRes = await gql(
               `query($login: String!, $from: DateTime!, $to: DateTime!) {
                 user(login: $login) {
                   contributionsCollection(from: $from, to: $to) {
@@ -87,6 +143,10 @@ jobs:
 
             fs.mkdirSync('dist', { recursive: true });
             fs.writeFileSync('dist/snake.svg', svg);
+            core.summary
+              .addRaw(`Built snake for **${targetYear}**: ${totalContribs} contributions ` +
+                      `(token: ${working[0]})`)
+              .write();
             console.log(`Built snake for ${targetYear}: ${totalContribs} contributions`);
 
       - name: Push the SVG to the output branch
