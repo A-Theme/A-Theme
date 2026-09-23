@@ -112,33 +112,72 @@ jobs:
 
             // Deterministic daily rotation -- no state file to maintain,
             // just changes automatically once every 24h and wraps around.
-            const daysSinceEpoch = Math.floor(Date.now() / 86400000);
-            const targetYear = yearsAvailable[daysSinceEpoch % yearsAvailable.length];
-
-            const from = new Date(Date.UTC(targetYear, 0, 1)).toISOString();
-            const to = new Date(Date.UTC(targetYear, 11, 31, 23, 59, 59)).toISOString();
-
-            const dataRes = await gql(
-              `query($login: String!, $from: DateTime!, $to: DateTime!) {
-                user(login: $login) {
-                  contributionsCollection(from: $from, to: $to) {
-                    contributionCalendar {
-                      weeks {
-                        contributionDays {
-                          contributionCount
-                          contributionLevel
-                          weekday
-                          date
-                        }
+            // Years the account was registered for but never committed in are
+            // skipped: the rotation used to publish them anyway, and the first
+            // green run after the token fix deployed a completely empty grid
+            // labelled "2022 - 0 contributions" over a good render. An empty
+            // year is a worse profile image than a repeated one, so the
+            // rotation starts at the deterministic index and walks forward to
+            // the first year that actually has contributions.
+            const CALENDAR = `query($login: String!, $from: DateTime!, $to: DateTime!) {
+              user(login: $login) {
+                contributionsCollection(from: $from, to: $to) {
+                  contributionCalendar {
+                    totalContributions
+                    weeks {
+                      contributionDays {
+                        contributionCount
+                        contributionLevel
+                        weekday
+                        date
                       }
                     }
                   }
                 }
-              }`,
-              { login: username, from, to }
-            );
+              }
+            }`;
 
-            const weeks = dataRes.user.contributionsCollection.contributionCalendar.weeks;
+            const daysSinceEpoch = Math.floor(Date.now() / 86400000);
+            const startIndex = daysSinceEpoch % yearsAvailable.length;
+
+            let targetYear = null;
+            let weeks = null;
+            const emptyYears = [];
+
+            for (let step = 0; step < yearsAvailable.length; step++) {
+              const year = yearsAvailable[(startIndex + step) % yearsAvailable.length];
+              const from = new Date(Date.UTC(year, 0, 1)).toISOString();
+              const to = new Date(Date.UTC(year, 11, 31, 23, 59, 59)).toISOString();
+              const res = await gql(CALENDAR, { login: username, from, to });
+              const calendar = res.user.contributionsCollection.contributionCalendar;
+              if (calendar.totalContributions > 0) {
+                targetYear = year;
+                weeks = calendar.weeks;
+                break;
+              }
+              emptyYears.push(year);
+            }
+
+            if (emptyYears.length) {
+              core.warning(
+                `no contributions in ${emptyYears.join(', ')} -- skipped, ` +
+                `rotation moved on to ${targetYear ?? 'nothing'}`
+              );
+            }
+
+            // Failing here is deliberate. The deploy step force-pushes an
+            // orphan commit over the output branch, so writing a blank SVG
+            // would destroy the last good one with no way back; stopping
+            // instead leaves the previous render serving on the profile.
+            if (!targetYear) {
+              throw new Error(
+                `every year from ${yearsAvailable[0]} to ` +
+                `${yearsAvailable[yearsAvailable.length - 1]} came back with zero ` +
+                'contributions -- refusing to overwrite the output branch with an ' +
+                'empty snake. The token in use likely cannot read contribution data.'
+              );
+            }
+
             const { svg, totalContribs } = buildSnakeSVG(weeks, targetYear);
 
             fs.mkdirSync('dist', { recursive: true });
