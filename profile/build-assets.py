@@ -20,7 +20,7 @@ TX, MU, DIM = "#eaf1fa", "#a8bdd4", "#7d95ae"
 #   Tinfoil-Themes: len(themes.json["themes"])
 #   RomM-Themes:    manifest.json["count"]  (the validator keeps it current)
 TINFOIL_COUNT = 173
-ROMM_COUNT = 134
+ROMM_COUNT = 160
 
 MONO = "ui-monospace, 'SFMono-Regular', 'Fira Code', Consolas, monospace"
 
@@ -212,12 +212,12 @@ def build_hero():
 
 # ============================================================== now.svg
 def build_now():
-    W, H = 1200, 232
+    W, H = 1200, 280
     lines = [
         ("$", "now", GR, None),
         ("→", "RomM-Themes", GR, f"{ROMM_COUNT} themes for the RomM Switch client — the main line of work"),
         ("→", "spritesheet-maker", GR, "animated backgrounds, packed the way the client reads them"),
-        ("→", "Theme-App 2.2.0", CY, "focus effects and per-role alpha in the RomM editor"),
+        ("→", "Theme-App", CY, "a CyberFoil editor — any RomM theme, converted and checked"),
         ("→", "switch-rom-forwarder", PU, "HOME-menu forwarders built on-device — no PC in the loop"),
         ("→", "dinner-by-derek", OC, "a supper club that runs off a phone. no Switch in sight"),
     ]
@@ -271,7 +271,7 @@ def build_now():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
   width="{W}" height="{H}" role="img" aria-labelledby="nowTitle nowDesc">
   <title id="nowTitle">Now building</title>
-  <desc id="nowDesc">A terminal panel that types out four current projects: Switch-Theme-Installer (k-means palette extraction on the console, in C), switch-rom-forwarder (HOME menu forwarders built on-device), Theme-App 2.1.0 (two editors, desktop build cut by CI), and dinner-by-derek (a supper club that runs off a phone).</desc>
+  <desc id="nowDesc">A terminal panel that types out what is being built now: RomM-Themes ({ROMM_COUNT} themes for the RomM Switch client), spritesheet-maker (animated backgrounds packed the way the client reads them), Theme-App (a new CyberFoil editor that converts any RomM theme and checks it with CyberFoil's own loader), switch-rom-forwarder (HOME-menu forwarders built on-device), and dinner-by-derek (a supper club that runs off a phone).</desc>
   <defs>
     {grid_def("gnow", CY, 40, 0.05)}
     <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
@@ -342,7 +342,7 @@ def build_pipeline():
     # ---- tier 1: the editors
     parts.append(box(400, 40, 400, 78, CY, "Theme-App  ·  the editors",
                      "browser  ·  installable PWA  ·  Windows desktop",
-                     "two editors, one launcher, one codebase"))
+                     "three editors, one launcher, one codebase"))
     # ---- tier 2: the databases
     parts.append(box(120, 210, 380, 78, GR, "RomM-Themes",
                      f"manifest.json  ·  {ROMM_COUNT} themes  ·  19 roles",
@@ -351,10 +351,12 @@ def build_pipeline():
                      f"themes.json  ·  {TINFOIL_COUNT} entries",
                      "stable — served from GitHub Pages"))
     # ---- tier 3: the consoles
-    parts.append(box(120, 372, 380, 62, GR, "RomM Switch client",
-                     "SDL2 homebrew  ·  reads a folder on the SD card"))
-    parts.append(box(700, 372, 380, 62, RD, "Switch-Theme-Installer",
-                     ".nro  ·  C  ·  devkitA64 / libnx / SDL2"))
+    parts.append(box(60, 372, 330, 62, GR, "RomM Switch client",
+                     "SDL2 homebrew  ·  a folder on the SD"))
+    parts.append(box(435, 372, 330, 62, PU, "CyberFoil",
+                     "installer  ·  theme/<folder>/theme.json"))
+    parts.append(box(810, 372, 330, 62, RD, "Switch-Theme-Installer",
+                     ".nro  ·  C  ·  devkitA64 / libnx"))
 
     # ---- wires: editors -> databases
     parts.append(wire(1, "M540 118 C 440 160, 330 160, 310 210", GR, 3, 3.2,
@@ -367,10 +369,13 @@ def build_pipeline():
     parts.append(wire(4, "M950 210 C 1000 150, 900 128, 780 118", CY, 2, 4.2,
                       "browse the live catalog, in-app", 900, 126))
     # ---- wires: databases -> consoles
-    parts.append(wire(5, "M310 288 L 310 372", GR, 2, 2.6,
-                      "the same manifest the console reads", 330, 330))
-    parts.append(wire(6, "M890 288 L 890 372", CY, 2, 2.6,
-                      "read live over the console's own network stack", 600, 330))
+    parts.append(wire(5, "M310 288 C 310 330, 225 330, 225 372", GR, 2, 2.6,
+                      "the manifest the console reads", 40, 336))
+    parts.append(wire(6, "M890 288 C 890 330, 975 330, 975 372", CY, 2, 2.6,
+                      "read live, on the console", 990, 336))
+    # ---- the CyberFoil path: a RomM theme, converted in the editor
+    parts.append(wire(7, "M600 118 L 600 372", PU, 3, 3.6,
+                      "RomM themes, converted", 612, 300))
 
     legend = (
         f'<g transform="translate(40,{H-14})">'
@@ -382,7 +387,7 @@ def build_pipeline():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
   width="{W}" height="{H}" role="img" aria-labelledby="pipeTitle pipeDesc">
   <title id="pipeTitle">How the A-Theme project fits together</title>
-  <desc id="pipeDesc">A system map. Theme-App (browser, PWA and Windows desktop) exports themes into two databases. The active one is RomM-Themes (manifest.json, {ROMM_COUNT} themes, 19 colour roles, validated in CI), read on the console by the RomM Switch client, an SDL2 homebrew app. The older one is Tinfoil-Themes (themes.json, {TINFOIL_COUNT} entries, served from GitHub Pages), read by Switch-Theme-Installer, a C homebrew .nro. Both databases are browsable from inside the editors.</desc>
+  <desc id="pipeDesc">A system map. Theme-App (browser, PWA and Windows desktop) exports themes into two databases, and converts RomM themes into packs for CyberFoil, the Switch installer. The active one is RomM-Themes (manifest.json, {ROMM_COUNT} themes, 19 colour roles, validated in CI), read on the console by the RomM Switch client, an SDL2 homebrew app. The older one is Tinfoil-Themes (themes.json, {TINFOIL_COUNT} entries, served from GitHub Pages), read by Switch-Theme-Installer, a C homebrew .nro. Both databases are browsable from inside the editors.</desc>
   <defs>
     {grid_def("gpipe", CY, 40, 0.045)}
     <clipPath id="pipeframe"><rect width="{W}" height="{H}" rx="14"/></clipPath>
@@ -534,16 +539,16 @@ write("pipeline.svg", build_pipeline())
 CARDS = [
     ("card-romm-themes.svg", GR, "RomM-Themes", f"{ROMM_COUNT} themes",
      ["The main line of work. Themes for the RomM Switch client: 19 semantic",
-      "colour roles, animated backgrounds, font, mascot art and music \u2014 plus",
-      "the sheet maker that builds them. CI validates every one."],
+      "colour roles, animated backgrounds, font, mascot art and music. CI",
+      "validates every one, and every one converts for CyberFoil."],
      [("JSON", GR), ("19 roles", CY), ("CI-validated", PU), ("sheet maker", DIM)],
      "dots"),
 
-    ("card-theme-app.svg", CY, "Theme-App", "v2.2.0",
-     ["The RomM theme editor \u2014 19 colour roles with per-role alpha, and",
-      "motion and focus effects ported from the client's own code, drawn at",
-      "the console's real 1280x720. The Tinfoil editor lives here too."],
-     [("HTML/JS", CY), ("Electron", PU), ("PWA", GR), ("no build step", DIM)],
+    ("card-theme-app.svg", CY, "Theme-App", "3 editors",
+     ["Editors for RomM, CyberFoil and Tinfoil. The RomM one runs the client's",
+      "own motion and focus-effect maths; the new CyberFoil one converts any",
+      "RomM theme and checks it with a port of CyberFoil's own loader."],
+     [("HTML/JS", CY), ("Electron", PU), ("PWA", GR), ("CyberFoil", DIM)],
      "dots"),
 
     ("card-forwarder.svg", PU, "switch-rom-forwarder", "new \u00b7 early",

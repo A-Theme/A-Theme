@@ -4,7 +4,7 @@
 
 <img src="https://raw.githubusercontent.com/A-Theme/Theme-App/main/assets/logo.png" width="84" height="84" alt="A-Theme logo"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1100&color=00C2FF&center=true&vCenter=true&width=700&lines=If+it+has+a+config+file%2C+I'm+opening+it.;Two+theme+formats%2C+three+platforms%2C+one+codebase.;Currently%3A+running+JavaScript+on+a+Nintendo+Switch.;Currently%3A+k-means+palettes%2C+on-device%2C+in+C.;Also%3A+a+supper+club+that+runs+off+a+phone.;Give+me+read+access+and+ten+minutes.)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1100&color=00C2FF&center=true&vCenter=true&width=700&lines=If+it+has+a+config+file%2C+I'm+opening+it.;Three+theme+formats%2C+one+codebase.;Any+RomM+theme%2C+converted+for+CyberFoil.;Currently%3A+running+JavaScript+on+a+Nintendo+Switch.;Currently%3A+k-means+palettes%2C+on-device%2C+in+C.;Also%3A+a+supper+club+that+runs+off+a+phone.;Give+me+read+access+and+ten+minutes.)](https://git.io/typing-svg)
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=A-Theme&label=Profile+Views&color=00c2ff&style=for-the-badge" alt="profile views"/>
@@ -35,7 +35,7 @@ rule
 
 <div align="center">
 
-<img src="profile/now.svg" alt="Now: 160 RomM themes and the sprite sheet maker that builds their animated backgrounds; Theme-App 2.3.0 with seventeen focus-effect kinds previewed live in the RomM editor; HOME-menu forwarders built on-device; and a supper-club ordering app" width="100%"/>
+<img src="profile/now.svg" alt="Now: 160 RomM themes and the sprite sheet maker that builds their animated backgrounds; Theme-App's new CyberFoil editor, which converts any RomM theme; HOME-menu forwarders built on-device; and a supper-club ordering app" width="100%"/>
 
 </div>
 
@@ -43,11 +43,11 @@ rule
 
 ## 🧩 How It All Fits Together
 
-The A-Theme project is one pipeline with two theme formats at the end of it — author a theme in the editor, publish it to a database, read it back on the console. The **RomM** path is the live one; the Tinfoil path still works and is still served, but that app has been overtaken. Every arrow below is a code path that actually ships:
+The A-Theme project is one pipeline with three theme formats at the end of it — author a theme in the editor, publish it to a database, read it back on the console. The **RomM** path is the live one, and since CyberFoil gained themes, every RomM theme can go there too, converted in the editor; the Tinfoil path still works and is still served, but that app has been overtaken. Every arrow below is a code path that actually ships:
 
 <div align="center">
 
-<img src="profile/pipeline.svg" alt="System map: Theme-App exports into RomM-Themes and Tinfoil-Themes; both databases are browsable from inside the editors and read on the console by the RomM Switch client and Switch-Theme-Installer" width="100%"/>
+<img src="profile/pipeline.svg" alt="System map: Theme-App exports into RomM-Themes and Tinfoil-Themes and converts RomM themes for CyberFoil; both databases are browsable from inside the editors and read on the console by the RomM Switch client and Switch-Theme-Installer" width="100%"/>
 
 </div>
 
@@ -120,18 +120,25 @@ The **RomM Switch client** — a full SDL2 homebrew app rather than a shop — i
 - **Backgrounds** with a dim control, plus `drift`/`pan`/`zoom` motion that costs **zero extra memory**, and real frame animation via sprite sheets
 - **Seventeen focus-effect kinds** around whatever is selected — two particle kinds, four that light the focus ring, and eleven border treatments that replace it outright. All procedural, so no art ships with them and they cost no texture memory, and the colour is a palette role rather than a hex so the effect moves with the theme. The maths is one implementation: the browser editor's port is diffed against the client's C++ across 16,133 rows, compared as raw 32-bit float patterns, so the preview is provably what the console draws
 - **Replacement font, mascot art, and music** — including tracker modules, often a few KB for minutes of audio. A theme's font does not cost the console's shared face: that stays loaded behind it and covers any string the theme's typeface has no glyph for, so a Latin-only font leaves Japanese titles readable instead of turning them into boxes
+- **Every one converts for [CyberFoil](https://github.com/luketanti/CyberFoil)** — copied across as they are, CyberFoil lists none of them (it wants `"version": 1`, the number); through Theme-App's CyberFoil editor, it lists all 160
 - Every submission is **validated in CI against the same rules the client enforces**, so a typo'd colour role or an uncommitted background never reaches a console
 - Animated backgrounds are **budgeted, not trusted**: one 720p frame is 3.6 MB of texture, so there's a 48 MB ceiling — and an animation over budget falls back to the still image in the preview, because that's what the console does with it
 - **[`tools/spritesheet-maker`](https://github.com/A-Theme/RomM-Themes/tree/main/tools/spritesheet-maker)** — *new* — a local app that turns a GIF, a video or one still image into a sheet the client can actually read. The client slices `cols = sheet_w / frame_width` from the top-left, so a sheet with padding between cells misaligns every frame after the first and nothing says so until it plays wrong on hardware. It ports the client's own acceptance rules — the 48 MB texture budget, the 240-frame and 60 fps ceilings, a cell that isn't 16:9 — and measures frame brightness the way the catalogue's validator does, since `dim` is tuned against the still image while the frames are what text sits on. Drop a file and the sheet, a playable preview and the `theme.json` block appear; ships as one executable per platform, ffmpeg included
 
 ### 🖥️ [Theme-App](https://github.com/A-Theme/Theme-App) — the editor for those themes
 
-Two editors, one per theming target, sharing a launcher and the same scaffolding — each runs as a browser app, an installable PWA, *and* a Windows desktop build the release workflow cuts from `CHANGELOG.md` on every tag. The **RomM** editor is where the work goes:
+Three editors, one per theming target, sharing a launcher and the same scaffolding — each runs as a browser app, an installable PWA, *and* a Windows desktop build the release workflow cuts from `CHANGELOG.md` on every tag. The **RomM** editor is where the work goes:
 
 - **Browse the published catalog from inside the editor** — it reads the same `manifest.json` the console reads, and opens a theme with its background, font, mascot and music downloaded, so the quickest way to start is to open the nearest existing theme and change it. The URL handling deliberately mirrors the client's own `theme_catalog.cpp`, percent-encoding byte for byte
 - **Background motion that actually plays** — `drift`/`pan`/`zoom` and sprite-sheet animation, previewed by a *port of the client's own `theme_motion.cpp`* rather than something that merely looks like drift. A differential test runs **6336 inputs through both implementations and requires byte-identical output**; it earned its keep immediately, catching that the console computes in 32-bit float where the first port was a whole pixel off at some timestamps
 - **Import a folder, a `.zip` pack, or a bare `theme.json`** — a `theme.json` only *names* its background, so importing one file used to hand you colours and five dangling references
 - **20 starting palettes**, each setting all 19 roles and contrast-checked on the pairs that actually break a theme: body text over all three surfaces, muted text, the focus ring, and whatever sits on an accent fill
+
+The **CyberFoil** editor — *new* — for [CyberFoil](https://github.com/luketanti/CyberFoil), the installer that gained external themes in 1.5.0:
+
+- **Any RomM theme, converted.** Pick one from the catalog and it comes out as a CyberFoil pack: 19 roles mapped onto CyberFoil's 11 with the legibility pairs kept together, the background darkened by the theme's own `dim` *in the pixels* (CyberFoil has no dim), and the theme's font — which CyberFoil cannot load — drawing a banner with the theme's name instead. All 160 convert, and CyberFoil lists every one
+- **Checked by CyberFoil's own code.** Whether the picker lists a theme, under what name, and which colours and images survive all come from a port of CyberFoil's `theme.cpp`. The real `theme.cpp` is compiled on the host against small stubs and the port has to agree on **5186 cases** — names measured in UTF-8 bytes, a BOM, `"version": 1.0` accepted where `"1"` is not, an alpha multiplied into a default with integer division
+- **Its screens, from its source** — main menu, file list, install queue and install progress, laid out from CyberFoil's page constructors and coloured through the same hex-literal remapping CyberFoil uses, with OLED mode and *Remove anime* as toggles. The anime mascots can be replaced or hidden
 
 And the **Tinfoil** editor, still maintained, no longer where new work lands:
 
