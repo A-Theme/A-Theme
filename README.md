@@ -4,7 +4,7 @@
 
 <img src="https://raw.githubusercontent.com/A-Theme/Theme-App/main/assets/logo.png" width="84" height="84" alt="A-Theme logo"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1100&color=00C2FF&center=true&vCenter=true&width=700&lines=If+it+has+a+config+file%2C+I'm+opening+it.;Three+theme+formats%2C+one+codebase.;Any+RomM+theme%2C+converted+for+CyberFoil.;Currently%3A+running+JavaScript+on+a+Nintendo+Switch.;Currently%3A+k-means+palettes%2C+on-device%2C+in+C.;Also%3A+a+supper+club+that+runs+off+a+phone.;Give+me+read+access+and+ten+minutes.)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1100&color=00C2FF&center=true&vCenter=true&width=700&lines=If+it+has+a+config+file%2C+I'm+opening+it.;Three+theme+formats%2C+one+codebase.;Any+RomM+or+Tinfoil+theme%2C+converted+for+CyberFoil.;Currently%3A+running+JavaScript+on+a+Nintendo+Switch.;Currently%3A+k-means+palettes%2C+on-device%2C+in+C.;Also%3A+a+supper+club+that+runs+off+a+phone.;Give+me+read+access+and+ten+minutes.)](https://git.io/typing-svg)
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=A-Theme&label=Profile+Views&color=00c2ff&style=for-the-badge" alt="profile views"/>
@@ -35,7 +35,7 @@ rule
 
 <div align="center">
 
-<img src="profile/now.svg" alt="Now: 160 RomM themes and the sprite sheet maker that builds their animated backgrounds; Theme-App's new CyberFoil editor, which converts any RomM theme; HOME-menu forwarders built on-device; and a supper-club ordering app" width="100%"/>
+<img src="profile/now.svg" alt="Now: 160 RomM themes and the sprite sheet maker that builds their animated backgrounds; Theme-App's new CyberFoil editor, which converts any RomM or Tinfoil theme; HOME-menu forwarders built on-device; and a supper-club ordering app" width="100%"/>
 
 </div>
 
@@ -43,11 +43,11 @@ rule
 
 ## 🧩 How It All Fits Together
 
-The A-Theme project is one pipeline with three theme formats at the end of it — author a theme in the editor, publish it to a database, read it back on the console. The **RomM** path is the live one, and since CyberFoil gained themes, every RomM theme can go there too, converted in the editor; the Tinfoil path still works and is still served, but that app has been overtaken. Every arrow below is a code path that actually ships:
+The A-Theme project is one pipeline with three theme formats at the end of it — author a theme in the editor, publish it to a database, read it back on the console. The **RomM** path is the live one, and since CyberFoil gained themes, every RomM and Tinfoil theme can go there too, converted in the editor; the Tinfoil path still works and is still served, but that app has been overtaken. Every arrow below is a code path that actually ships:
 
 <div align="center">
 
-<img src="profile/pipeline.svg" alt="System map: Theme-App exports into RomM-Themes and Tinfoil-Themes and converts RomM themes for CyberFoil; both databases are browsable from inside the editors and read on the console by the RomM Switch client and Switch-Theme-Installer" width="100%"/>
+<img src="profile/pipeline.svg" alt="System map: Theme-App exports into RomM-Themes and Tinfoil-Themes and converts RomM and Tinfoil themes for CyberFoil; both databases are browsable from inside the editors and read on the console by the RomM Switch client and Switch-Theme-Installer" width="100%"/>
 
 </div>
 
@@ -137,6 +137,7 @@ Three editors, one per theming target, sharing a launcher and the same scaffoldi
 The **CyberFoil** editor — *new* — for [CyberFoil](https://github.com/luketanti/CyberFoil), the installer that gained external themes in 1.5.0:
 
 - **Any RomM theme, converted.** Pick one from the catalog and it comes out as a CyberFoil pack: 19 roles mapped onto CyberFoil's 11 with the legibility pairs kept together, the background darkened by the theme's own `dim` *in the pixels* (CyberFoil has no dim), and the theme's font — which CyberFoil cannot load — drawing a banner with the theme's name instead. All 160 convert, and CyberFoil lists every one
+- **Tinfoil themes too.** All 170 in Tinfoil-Themes convert: Tinfoil's layout colours read for what they do, its logo fitted into the banner, BMPs redrawn as PNG — and where a see-through Tinfoil menu would leave text unreadable over CyberFoil's full-width bars, that bar's opacity is raised just far enough, hue kept, and the change listed
 - **Checked by CyberFoil's own code.** Whether the picker lists a theme, under what name, and which colours and images survive all come from a port of CyberFoil's `theme.cpp`. The real `theme.cpp` is compiled on the host against small stubs and the port has to agree on **5186 cases** — names measured in UTF-8 bytes, a BOM, `"version": 1.0` accepted where `"1"` is not, an alpha multiplied into a default with integer division
 - **Its screens, from its source** — main menu, file list, install queue and install progress, laid out from CyberFoil's page constructors and coloured through the same hex-literal remapping CyberFoil uses, with OLED mode and *Remove anime* as toggles. The anime mascots can be replaced or hidden
 

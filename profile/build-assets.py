@@ -217,7 +217,7 @@ def build_now():
         ("$", "now", GR, None),
         ("→", "RomM-Themes", GR, f"{ROMM_COUNT} themes for the RomM Switch client — the main line of work"),
         ("→", "spritesheet-maker", GR, "animated backgrounds, packed the way the client reads them"),
-        ("→", "Theme-App", CY, "a CyberFoil editor — any RomM theme, converted and checked"),
+        ("→", "Theme-App", CY, "a CyberFoil editor — any RomM or Tinfoil theme, converted and checked"),
         ("→", "switch-rom-forwarder", PU, "HOME-menu forwarders built on-device — no PC in the loop"),
         ("→", "dinner-by-derek", OC, "a supper club that runs off a phone. no Switch in sight"),
     ]
@@ -271,7 +271,7 @@ def build_now():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
   width="{W}" height="{H}" role="img" aria-labelledby="nowTitle nowDesc">
   <title id="nowTitle">Now building</title>
-  <desc id="nowDesc">A terminal panel that types out what is being built now: RomM-Themes ({ROMM_COUNT} themes for the RomM Switch client), spritesheet-maker (animated backgrounds packed the way the client reads them), Theme-App (a new CyberFoil editor that converts any RomM theme and checks it with CyberFoil's own loader), switch-rom-forwarder (HOME-menu forwarders built on-device), and dinner-by-derek (a supper club that runs off a phone).</desc>
+  <desc id="nowDesc">A terminal panel that types out what is being built now: RomM-Themes ({ROMM_COUNT} themes for the RomM Switch client), spritesheet-maker (animated backgrounds packed the way the client reads them), Theme-App (a new CyberFoil editor that converts any RomM or Tinfoil theme and checks it with CyberFoil's own loader), switch-rom-forwarder (HOME-menu forwarders built on-device), and dinner-by-derek (a supper club that runs off a phone).</desc>
   <defs>
     {grid_def("gnow", CY, 40, 0.05)}
     <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
@@ -375,7 +375,7 @@ def build_pipeline():
                       "read live, on the console", 990, 336))
     # ---- the CyberFoil path: a RomM theme, converted in the editor
     parts.append(wire(7, "M600 118 L 600 372", PU, 3, 3.6,
-                      "RomM themes, converted", 612, 300))
+                      "RomM + Tinfoil themes, converted", 612, 300))
 
     legend = (
         f'<g transform="translate(40,{H-14})">'
@@ -387,7 +387,7 @@ def build_pipeline():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"
   width="{W}" height="{H}" role="img" aria-labelledby="pipeTitle pipeDesc">
   <title id="pipeTitle">How the A-Theme project fits together</title>
-  <desc id="pipeDesc">A system map. Theme-App (browser, PWA and Windows desktop) exports themes into two databases, and converts RomM themes into packs for CyberFoil, the Switch installer. The active one is RomM-Themes (manifest.json, {ROMM_COUNT} themes, 19 colour roles, validated in CI), read on the console by the RomM Switch client, an SDL2 homebrew app. The older one is Tinfoil-Themes (themes.json, {TINFOIL_COUNT} entries, served from GitHub Pages), read by Switch-Theme-Installer, a C homebrew .nro. Both databases are browsable from inside the editors.</desc>
+  <desc id="pipeDesc">A system map. Theme-App (browser, PWA and Windows desktop) exports themes into two databases, and converts RomM and Tinfoil themes into packs for CyberFoil, the Switch installer. The active one is RomM-Themes (manifest.json, {ROMM_COUNT} themes, 19 colour roles, validated in CI), read on the console by the RomM Switch client, an SDL2 homebrew app. The older one is Tinfoil-Themes (themes.json, {TINFOIL_COUNT} entries, served from GitHub Pages), read by Switch-Theme-Installer, a C homebrew .nro. Both databases are browsable from inside the editors.</desc>
   <defs>
     {grid_def("gpipe", CY, 40, 0.045)}
     <clipPath id="pipeframe"><rect width="{W}" height="{H}" rx="14"/></clipPath>
@@ -547,7 +547,7 @@ CARDS = [
     ("card-theme-app.svg", CY, "Theme-App", "3 editors",
      ["Editors for RomM, CyberFoil and Tinfoil. The RomM one runs the client's",
       "own motion and focus-effect maths; the new CyberFoil one converts any",
-      "RomM theme and checks it with a port of CyberFoil's own loader."],
+      "RomM or Tinfoil theme, checked by a port of CyberFoil's own loader."],
      [("HTML/JS", CY), ("Electron", PU), ("PWA", GR), ("CyberFoil", DIM)],
      "dots"),
 
@@ -567,8 +567,8 @@ CARDS = [
 
     ("card-tinfoil-themes.svg", CY, "Tinfoil-Themes", f"{TINFOIL_COUNT} entries",
      ["The Tinfoil database \u2014 community and original themes, served off",
-      "GitHub Pages, browsable from the editor and the console. Stable and",
-      "still served; new work happens on the RomM side now."],
+      "GitHub Pages, browsable from the editor and the console. Stable, still",
+      "served, and every theme now converts for CyberFoil."],
      [("JSON", CY), ("GitHub Pages", GR), ("stable", PU), ("secret-scanned", DIM)],
      f'<g transform="translate(516,120)">{dots_glyph(CY)}</g>'),
 
